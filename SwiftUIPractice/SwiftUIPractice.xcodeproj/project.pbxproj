@@ -11,6 +11,7 @@
 		C379F77C2C12452C0016E690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F77B2C12452C0016E690 /* ContentView.swift */; };
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
 		C379F7812C12452E0016E690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F7802C12452E0016E690 /* Preview Assets.xcassets */; };
+		C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7892C1248B00016E690 /* ImageWrapperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C379F77B2C12452C0016E690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C379F77D2C12452E0016E690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C379F7802C12452E0016E690 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C379F7892C1248B00016E690 /* ImageWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWrapperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		C379F7782C12452C0016E690 /* SwiftUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				C379F7872C1248010016E690 /* Components */,
 				C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */,
 				C379F77B2C12452C0016E690 /* ContentView.swift */,
 				C379F77D2C12452E0016E690 /* Assets.xcassets */,
@@ -65,6 +68,30 @@
 				C379F7802C12452E0016E690 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C379F7872C1248010016E690 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C379F7882C12489B0016E690 /* ImageWrapper */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C379F7882C12489B0016E690 /* ImageWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				C379F78B2C1248B40016E690 /* Views */,
+			);
+			path = ImageWrapper;
+			sourceTree = "<group>";
+		};
+		C379F78B2C1248B40016E690 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C379F7892C1248B00016E690 /* ImageWrapperView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
+				C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */,
 				C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
