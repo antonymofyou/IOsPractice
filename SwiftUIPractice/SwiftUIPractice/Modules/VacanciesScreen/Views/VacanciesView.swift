@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VacanciesView: View {
-    @StateObject private var viewModel = VacanciesViewModel()
+    @EnvironmentObject var viewModel: VacanciesViewModel
 
     var body: some View {
         VStack {
@@ -53,7 +53,7 @@ struct ListView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(0..<viewModel.vacancies.count) { index in
+                ForEach(0..<$viewModel.vacancies.count) { index in
                     VacancyCellView(vacancy: viewModel.vacancies[index])
                 }
             }
@@ -121,6 +121,15 @@ struct VacancyCellView: View {
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        var viewModel: VacanciesViewModel = VacanciesViewModel()
+        viewModel.vacancies = [
+            VacancyModel(info: ["id": 1, "name": "Front", "description": "Описание вакансии", "published": 1, "createdAt": "2023-06-01"]),
+            VacancyModel(info: ["id": 2, "name": "Data Scientist", "description": "Описание вакансии", "published": 1, "createdAt": "2023-06-02"]),
+            VacancyModel(info: ["id": 3, "name": "Project Manager", "description": "Описание вакансии", "published": 0, "createdAt": "2023-06-03"]),
+            VacancyModel(info: ["id": 4, "name": "Project Manager", "description": "Описание вакансии", "published": 0, "createdAt": "2023-06-03"])
+        ]
+        return VacanciesView().environmentObject(viewModel)
+    }
 }
