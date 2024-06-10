@@ -73,25 +73,9 @@
 		C379F7872C1248010016E690 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C379F7882C12489B0016E690 /* ImageWrapper */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		C379F7882C12489B0016E690 /* ImageWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				C379F78B2C1248B40016E690 /* Views */,
-			);
-			path = ImageWrapper;
-			sourceTree = "<group>";
-		};
-		C379F78B2C1248B40016E690 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				C379F7892C1248B00016E690 /* ImageWrapperView.swift */,
 			);
-			path = Views;
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
