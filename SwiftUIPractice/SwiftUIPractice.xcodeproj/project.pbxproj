@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4CD38F2C1731D90020CD42 /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD38E2C1731D90020CD42 /* VacancyModel.swift */; };
+		2A4CD3912C1731F00020CD42 /* VacanciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3902C1731F00020CD42 /* VacanciesViewModel.swift */; };
+		2A4CD3932C17320B0020CD42 /* VacanciesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3922C17320B0020CD42 /* VacanciesView.swift */; };
 		C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */; };
 		C379F77C2C12452C0016E690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F77B2C12452C0016E690 /* ContentView.swift */; };
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A4CD38E2C1731D90020CD42 /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
+		2A4CD3902C1731F00020CD42 /* VacanciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesViewModel.swift; sourceTree = "<group>"; };
+		2A4CD3922C17320B0020CD42 /* VacanciesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesView.swift; sourceTree = "<group>"; };
 		C379F7762C12452C0016E690 /* SwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		C379F77B2C12452C0016E690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +38,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A4CD3882C1731A40020CD42 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3892C1731AB0020CD42 /* VacanciesScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2A4CD3892C1731AB0020CD42 /* VacanciesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD38D2C1731C90020CD42 /* API */,
+				2A4CD38C2C1731C30020CD42 /* Views */,
+				2A4CD38B2C1731BD0020CD42 /* ViewModels */,
+				2A4CD38A2C1731B80020CD42 /* Models */,
+			);
+			path = VacanciesScreen;
+			sourceTree = "<group>";
+		};
+		2A4CD38A2C1731B80020CD42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD38E2C1731D90020CD42 /* VacancyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A4CD38B2C1731BD0020CD42 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3902C1731F00020CD42 /* VacanciesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A4CD38C2C1731C30020CD42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3922C17320B0020CD42 /* VacanciesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A4CD38D2C1731C90020CD42 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		C379F76D2C12452C0016E690 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +107,7 @@
 		C379F7782C12452C0016E690 /* SwiftUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				2A4CD3882C1731A40020CD42 /* Modules */,
 				C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */,
 				C379F77B2C12452C0016E690 /* ContentView.swift */,
 				C379F77D2C12452E0016E690 /* Assets.xcassets */,
@@ -137,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4CD3912C1731F00020CD42 /* VacanciesViewModel.swift in Sources */,
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
+				2A4CD3932C17320B0020CD42 /* VacanciesView.swift in Sources */,
 				C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */,
+				2A4CD38F2C1731D90020CD42 /* VacancyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
