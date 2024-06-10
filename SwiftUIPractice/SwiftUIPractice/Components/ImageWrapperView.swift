@@ -1,29 +1,5 @@
 import SwiftUI
 
-// MARK: - WrappedTextView
-// `WrappedTextView` - это UIViewRepresentable, который позволяет использовать UITextView в SwiftUI.
-struct WrappedTextView: UIViewRepresentable {
-    // `wrappedFrame` - прямоугольник, который будет исключен из области текста.
-    var wrappedFrame: CGRect
-    // `textContent` - текст, который будет отображаться в UITextView.
-    var textContent: String
-
-    // Создает и конфигурирует UITextView для использования в SwiftUI.
-    func makeUIView(context: Context) -> UITextView {
-        let textView = UITextView()
-        textView.isEditable = false // UITextView не будет редактируемым.
-        textView.text = textContent // Установка текста, переданного в структуру.
-        textView.font = UIFont.systemFont(ofSize: 18) // Установка шрифта текста.
-        return textView
-    }
-
-    // Обновляет существующий UITextView с новыми параметрами, когда SwiftUI обновляет представление.
-    func updateUIView(_ uiView: UITextView, context: Context) {
-        let exclusionPath = UIBezierPath(rect: wrappedFrame) // Создаем путь исключения по `wrappedFrame`.
-        uiView.textContainer.exclusionPaths = [exclusionPath] // Назначаем путь исключения в контейнер текста.
-    }
-}
-
 // MARK: - ImageWrapperView
 struct ImageWrapperView: View {
     // `imageFrame` - фрейм изображения, который будет использоваться для создания области исключения в тексте.
@@ -62,6 +38,31 @@ struct ImageWrapperView: View {
                     .position(x: fullGeometry.size.width - imageFrame.width / 2, y: imageFrame.height / 2) // Центрируем изображение в его фрейме.
             }
         }
+    }
+}
+
+
+// MARK: - WrappedTextView
+// `WrappedTextView` - это UIViewRepresentable, который позволяет использовать UITextView в SwiftUI.
+struct WrappedTextView: UIViewRepresentable {
+    // `wrappedFrame` - прямоугольник, который будет исключен из области текста.
+    var wrappedFrame: CGRect
+    // `textContent` - текст, который будет отображаться в UITextView.
+    var textContent: String
+
+    // Создает и конфигурирует UITextView для использования в SwiftUI.
+    func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+        textView.isEditable = false // UITextView не будет редактируемым.
+        textView.text = textContent // Установка текста, переданного в структуру.
+        textView.font = UIFont.systemFont(ofSize: 18) // Установка шрифта текста.
+        return textView
+    }
+
+    // Обновляет существующий UITextView с новыми параметрами, когда SwiftUI обновляет представление.
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        let exclusionPath = UIBezierPath(rect: wrappedFrame) // Создаем путь исключения по `wrappedFrame`.
+        uiView.textContainer.exclusionPaths = [exclusionPath] // Назначаем путь исключения в контейнер текста.
     }
 }
 
