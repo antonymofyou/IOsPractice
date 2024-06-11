@@ -90,12 +90,10 @@ struct WrappedTextView: UIViewRepresentable {
 
 // MARK: - ImageWrapperView_Preview
 // Предпросмотр для `ImageWrapperView`.
-struct ImageWrapperView_Preview: PreviewProvider {
-    static var previews: some View {
-        ImageWrapperView(
-            textContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            imageContent: .remove,
-            fontSize: 18
-        )
-    }
+#Preview {
+    ImageWrapperView(
+        textContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        imageContent: .remove,
+        fontSize: 18
+    )
 }
