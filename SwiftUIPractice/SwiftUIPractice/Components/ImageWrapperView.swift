@@ -13,7 +13,7 @@ struct ImageWrapperView: View {
     // `maxHeight` - максимальная высота картинки.
     var maxHeight: CGFloat?
     // `fontSize` - размер шрифта в тексте.
-    var fontSize: CGFloat
+    var fontSize: CGFloat = 18 // базовый размер шрифта
     // Основное тело `ImageWrapperView`.
     var body: some View {
         ZStack {
