@@ -12,6 +12,11 @@
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
 		C379F7812C12452E0016E690 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F7802C12452E0016E690 /* Preview Assets.xcassets */; };
 		C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7892C1248B00016E690 /* ImageWrapperView.swift */; };
+		C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7FB2C19F8D80016E690 /* API_root_class.swift */; };
+		C379F7FE2C19F90B0016E690 /* MainResponseClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7FD2C19F90B0016E690 /* MainResponseClass.swift */; };
+		C379F8002C19F91D0016E690 /* MainRequestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7FF2C19F91D0016E690 /* MainRequestClass.swift */; };
+		C379F8022C19F9380016E690 /* ConfigData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F8012C19F9380016E690 /* ConfigData.swift */; };
+		C379F8052C19FA530016E690 /* SerializedSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C379F8042C19FA530016E690 /* SerializedSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,10 @@
 		C379F77D2C12452E0016E690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C379F7802C12452E0016E690 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C379F7892C1248B00016E690 /* ImageWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWrapperView.swift; sourceTree = "<group>"; };
+		C379F7FB2C19F8D80016E690 /* API_root_class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_root_class.swift; sourceTree = "<group>"; };
+		C379F7FD2C19F90B0016E690 /* MainResponseClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponseClass.swift; sourceTree = "<group>"; };
+		C379F7FF2C19F91D0016E690 /* MainRequestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRequestClass.swift; sourceTree = "<group>"; };
+		C379F8012C19F9380016E690 /* ConfigData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C379F8052C19FA530016E690 /* SerializedSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,11 +63,13 @@
 		C379F7782C12452C0016E690 /* SwiftUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				C379F7FA2C19F8C80016E690 /* API */,
 				C379F7872C1248010016E690 /* Components */,
 				C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */,
 				C379F77B2C12452C0016E690 /* ContentView.swift */,
 				C379F77D2C12452E0016E690 /* Assets.xcassets */,
 				C379F77F2C12452E0016E690 /* Preview Content */,
+				C379F8012C19F9380016E690 /* ConfigData.swift */,
 			);
 			path = SwiftUIPractice;
 			sourceTree = "<group>";
@@ -78,6 +90,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C379F7FA2C19F8C80016E690 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C379F7FB2C19F8D80016E690 /* API_root_class.swift */,
+				C379F7FD2C19F90B0016E690 /* MainResponseClass.swift */,
+				C379F7FF2C19F91D0016E690 /* MainRequestClass.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,6 +116,9 @@
 			dependencies = (
 			);
 			name = SwiftUIPractice;
+			packageProductDependencies = (
+				C379F8042C19FA530016E690 /* SerializedSwift */,
+			);
 			productName = SwiftUIPractice;
 			productReference = C379F7762C12452C0016E690 /* SwiftUIPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -122,6 +147,9 @@
 				Base,
 			);
 			mainGroup = C379F76D2C12452C0016E690;
+			packageReferences = (
+				C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */,
+			);
 			productRefGroup = C379F7772C12452C0016E690 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,8 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
+				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
+				C379F8022C19F9380016E690 /* ConfigData.swift in Sources */,
 				C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */,
+				C379F7FE2C19F90B0016E690 /* MainResponseClass.swift in Sources */,
 				C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */,
+				C379F8002C19F91D0016E690 /* MainRequestClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dejanskledar/SerializedSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C379F8042C19FA530016E690 /* SerializedSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */;
+			productName = SerializedSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C379F76E2C12452C0016E690 /* Project object */;
 }
