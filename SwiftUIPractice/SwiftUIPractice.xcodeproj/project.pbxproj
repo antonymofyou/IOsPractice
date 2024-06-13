@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4CD3D52C1B52C80020CD42 /* VacancyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */; };
+		2A4CD3D72C1B52DD0020CD42 /* VacancyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */; };
+		2A4CD3DA2C1B53030020CD42 /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */; };
+		2A4CD3DE2C1B534C0020CD42 /* VacancyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3DD2C1B534C0020CD42 /* VacancyViewCell.swift */; };
+		2A4CD3E02C1B53650020CD42 /* VacancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3DF2C1B53650020CD42 /* VacancyView.swift */; };
+		2A4CD3E32C1B53AA0020CD42 /* VacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3E22C1B53AA0020CD42 /* VacancyViewModel.swift */; };
 		C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */; };
 		C379F77C2C12452C0016E690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F77B2C12452C0016E690 /* ContentView.swift */; };
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
@@ -20,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyResponse.swift; sourceTree = "<group>"; };
+		2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyRequest.swift; sourceTree = "<group>"; };
+		2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
+		2A4CD3DD2C1B534C0020CD42 /* VacancyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewCell.swift; sourceTree = "<group>"; };
+		2A4CD3DF2C1B53650020CD42 /* VacancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyView.swift; sourceTree = "<group>"; };
+		2A4CD3E22C1B53AA0020CD42 /* VacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewModel.swift; sourceTree = "<group>"; };
 		C379F7762C12452C0016E690 /* SwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		C379F77B2C12452C0016E690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +56,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A4CD3D12C1B52A20020CD42 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3D22C1B52A70020CD42 /* VacanciesScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2A4CD3D22C1B52A70020CD42 /* VacanciesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3E12C1B539B0020CD42 /* ViewModels */,
+				2A4CD3DC2C1B53330020CD42 /* Views */,
+				2A4CD3D82C1B52F70020CD42 /* Models */,
+				2A4CD3D32C1B52B70020CD42 /* API */,
+			);
+			path = VacanciesScreen;
+			sourceTree = "<group>";
+		};
+		2A4CD3D32C1B52B70020CD42 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */,
+				2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2A4CD3D82C1B52F70020CD42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A4CD3DC2C1B53330020CD42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3DD2C1B534C0020CD42 /* VacancyViewCell.swift */,
+				2A4CD3DF2C1B53650020CD42 /* VacancyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A4CD3E12C1B539B0020CD42 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A4CD3E22C1B53AA0020CD42 /* VacancyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		C379F76D2C12452C0016E690 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +128,7 @@
 		C379F7782C12452C0016E690 /* SwiftUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				2A4CD3D12C1B52A20020CD42 /* Modules */,
 				C379F7FA2C19F8C80016E690 /* API */,
 				C379F7872C1248010016E690 /* Components */,
 				C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */,
@@ -149,6 +215,7 @@
 			mainGroup = C379F76D2C12452C0016E690;
 			packageReferences = (
 				C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */,
+				2A4CD3DB2C1B53190020CD42 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C379F7772C12452C0016E690 /* Products */;
 			projectDirPath = "";
@@ -176,10 +243,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4CD3D72C1B52DD0020CD42 /* VacancyRequest.swift in Sources */,
+				2A4CD3DA2C1B53030020CD42 /* VacancyModel.swift in Sources */,
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
+				2A4CD3DE2C1B534C0020CD42 /* VacancyViewCell.swift in Sources */,
 				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
 				C379F8022C19F9380016E690 /* ConfigData.swift in Sources */,
 				C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */,
+				2A4CD3E32C1B53AA0020CD42 /* VacancyViewModel.swift in Sources */,
+				2A4CD3D52C1B52C80020CD42 /* VacancyResponse.swift in Sources */,
+				2A4CD3E02C1B53650020CD42 /* VacancyView.swift in Sources */,
 				C379F7FE2C19F90B0016E690 /* MainResponseClass.swift in Sources */,
 				C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */,
 				C379F8002C19F91D0016E690 /* MainRequestClass.swift in Sources */,
@@ -392,6 +465,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A4CD3DB2C1B53190020CD42 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dejanskledar/SerializedSwift";
