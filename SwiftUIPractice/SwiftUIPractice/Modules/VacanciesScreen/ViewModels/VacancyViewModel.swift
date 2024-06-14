@@ -17,6 +17,10 @@ class VacanciesViewModel: ObservableObject {
         obtainData()
     }
 
+    init(isPreview: Bool) {
+
+    }
+
     func obtainData() {
         let vacancyModel = VacancyModel()
         vacancyModel.GetAllVacancies { result in
