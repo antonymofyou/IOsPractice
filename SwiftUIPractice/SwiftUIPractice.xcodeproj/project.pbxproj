@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4CD3FF2C1C88370020CD42 /* TextTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3FE2C1C88370020CD42 /* TextTagView.swift */; };
 		C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */; };
 		C379F77C2C12452C0016E690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F77B2C12452C0016E690 /* ContentView.swift */; };
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A4CD3FE2C1C88370020CD42 /* TextTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTagView.swift; sourceTree = "<group>"; };
 		C379F7762C12452C0016E690 /* SwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		C379F77B2C12452C0016E690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				C379F7892C1248B00016E690 /* ImageWrapperView.swift */,
+				2A4CD3FE2C1C88370020CD42 /* TextTagView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4CD3FF2C1C88370020CD42 /* TextTagView.swift in Sources */,
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
 				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
 				C379F8022C19F9380016E690 /* ConfigData.swift in Sources */,
