@@ -11,11 +11,7 @@ struct TextTagView: View {
     let rawText: String
 
     var body: some View {
-        VStack {
-            styledText(from: rawText)
-                .font(.system(size: 34))
-                .padding()
-        }
+        styledText(from: rawText)
     }
 }
 
