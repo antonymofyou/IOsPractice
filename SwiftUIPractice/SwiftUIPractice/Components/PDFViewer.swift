@@ -12,6 +12,7 @@ import Combine
 // Используем UIViewRepresentable так как внутренняя библиотека PDFKit используется с UIKit
 struct PDFKitView: UIViewRepresentable {
     @Binding var document: PDFDocument?
+    @Binding var currentPageIndex: Int
 
     func makeUIView(context: Context) -> PDFView {
         let pdfView = PDFView()
@@ -23,9 +24,6 @@ struct PDFKitView: UIViewRepresentable {
         // Установка документа
         if let document = document {
             pdfView.document = document
-            DispatchQueue.main.async {
-                self.centerAndScalePDF(pdfView: pdfView)
-            }
         }
 
         return pdfView
@@ -33,42 +31,13 @@ struct PDFKitView: UIViewRepresentable {
 
     func updateUIView(_ uiView: PDFView, context: Context) {
         // обновляем документ и центрируем на экране
-        uiView.document = document
-        DispatchQueue.main.async {
-            self.centerAndScalePDF(pdfView: uiView)
+        if let document = document {
+            uiView.document = document
+            //переход по страницам с текущим индексом
+            if let page = document.page(at: currentPageIndex) {
+                uiView.go(to: page)
+            }
         }
-    }
-
-    private func centerAndScalePDF(pdfView: PDFView) {
-        // Получаем данные о странице pdf для расчета положения
-        guard let currentPage = pdfView.currentPage else { return }
-        let pageRect = currentPage.bounds(for: .mediaBox)
-        let pdfBounds = pdfView.bounds
-
-        // Расчет масштаба для вписывания страницы по ширине или высоте
-        let scaleWidth = pdfBounds.width / pageRect.width
-        let scaleHeight = pdfBounds.height / pageRect.height
-        let scaleFactor = min(scaleWidth, scaleHeight)
-
-        pdfView.scaleFactor = scaleFactor
-        pdfView.minScaleFactor = scaleFactor / 2  // Минимальный масштаб
-        pdfView.maxScaleFactor = scaleFactor * 3  // Максимальный масштаб
-
-        // Центрирование страницы
-        let scaledPageSize = CGSize(width: pageRect.width * scaleFactor, height: pageRect.height * scaleFactor)
-        let horizontalPadding = max(0, (pdfBounds.width - scaledPageSize.width) / 2)
-        let verticalPadding = max(0, (pdfBounds.height - scaledPageSize.height) / 2)
-
-        // Обновление отступов для центрирования
-        pdfView.layoutMargins = UIEdgeInsets(
-            top: verticalPadding,
-            left: horizontalPadding,
-            bottom: verticalPadding,
-            right: horizontalPadding
-        )
-
-        // Переключаем autoScales в false, чтобы пользователь мог масштабировать PDF
-        pdfView.autoScales = false
     }
 }
 
@@ -78,13 +47,41 @@ struct PDFViewer: View {
     @State private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     var documentURL: String
 
+    @State private var currentPageIndex: Int = 0
+
     var body: some View {
         VStack {
-            if document != nil {
-                PDFKitView(document: $document)
-                    .edgesIgnoringSafeArea(.all)
+            if let document = document {
+                VStack {
+                    PDFKitView(document: $document, currentPageIndex: $currentPageIndex)
+                        .edgesIgnoringSafeArea(.all)
+
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            //переход к предыдущему слайду
+                            if currentPageIndex > 0 {
+                                currentPageIndex -= 1
+                            }
+                        }) {
+                            Image(systemName: "arrow.left")
+                        }
+                        .padding()
+                        Spacer()
+                        Button(action: {
+                            //переход к следующему слайду
+                            if currentPageIndex < (document.pageCount - 1) {
+                                currentPageIndex += 1
+                            }
+                        }) {
+                            Image(systemName: "arrow.right")
+                        }
+                        .padding()
+                        Spacer()
+                    }
+                }
             } else {
-                Text("Загрузка...")
+                Text("Loading...")
                     .onAppear {
                         loadPDF()
                     }
@@ -107,6 +104,6 @@ struct PDFViewer: View {
 
 struct PDFViewer_Previews: PreviewProvider {
     static var previews: some View {
-        PDFViewer(documentURL: "https://s549sas.storage.yandex.net/rdisk/06c4f69ff0edca3a1f13c5af34edee921add5b57edadabfbefaf64f7815515c9/667563f7/LJd5h2Yt4sQeIIdfa80A2erkgEtOcEIRgAJYk5egY45wd1TN5fzh7WnVvP6FvPC32g6i2ymbEomo8KLEfj5Jmg==?uid=545285032&filename=Резюме2.pdf&disposition=attachment&hash=&limit=0&content_type=application%2Fpdf&owner_uid=545285032&fsize=190100&hid=e5092f232b9bbaba8aefc786254c877d&media_type=document&tknv=v2&etag=774aec1e89869b54b46f5a78d0e45317&ts=61b64bc97abc0&s=0afb60a972aee9c153270c506c41bccc4ab3d5766c94044c9c8b0ed94e0a45bb&pb=U2FsdGVkX1-WF0si_SEZI464L13BFFWAEOumiXWDlSIM_D4rSDAW3fjPm5csJEdNeKh8Kb7EpqSKmcRLrRx9riRRPr_raow1wVgE_032XYk")
+        PDFViewer(documentURL: "https://s956sas.storage.yandex.net/rdisk/b900b5c02760cb5c04f26fd5b492b753ec5cd677604b711e2ef48a697516f25d/6676e7e0/LJd5h2Yt4sQeIIdfa80A2RDUqte3sOqEfQt1maKeZP8hbk-NWSu2IOwqCzW26ayx80NBfPrQTboqPnDv683_mA==?uid=545285032&filename=test2.pdf&disposition=attachment&hash=&limit=0&content_type=application%2Fpdf&owner_uid=545285032&fsize=10767270&hid=1d8673e0f2400f453174241a9c187988&media_type=document&tknv=v2&etag=c7a86ec848f3f30cd076aa436bcab053&ts=61b7bdba1b800&s=6b267cc7c32042136e98512536c012b63dc5b0c326647050c78ea304430a2e56&pb=U2FsdGVkX1_bgdVSDF493ET92m6kXO05o2AVuk3QLqgqUoGTARJYo5TIzEmCEWbEpLsieykqBXj3U2eqgob77kRX_AtBdEvuEaQ9avAhexw")added the ability to scroll through slides
     }
 }
