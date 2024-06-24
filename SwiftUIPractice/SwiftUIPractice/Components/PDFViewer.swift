@@ -104,6 +104,6 @@ struct PDFViewer: View {
 
 struct PDFViewer_Previews: PreviewProvider {
     static var previews: some View {
-        PDFViewer(documentURL: "https://s956sas.storage.yandex.net/rdisk/b900b5c02760cb5c04f26fd5b492b753ec5cd677604b711e2ef48a697516f25d/6676e7e0/LJd5h2Yt4sQeIIdfa80A2RDUqte3sOqEfQt1maKeZP8hbk-NWSu2IOwqCzW26ayx80NBfPrQTboqPnDv683_mA==?uid=545285032&filename=test2.pdf&disposition=attachment&hash=&limit=0&content_type=application%2Fpdf&owner_uid=545285032&fsize=10767270&hid=1d8673e0f2400f453174241a9c187988&media_type=document&tknv=v2&etag=c7a86ec848f3f30cd076aa436bcab053&ts=61b7bdba1b800&s=6b267cc7c32042136e98512536c012b63dc5b0c326647050c78ea304430a2e56&pb=U2FsdGVkX1_bgdVSDF493ET92m6kXO05o2AVuk3QLqgqUoGTARJYo5TIzEmCEWbEpLsieykqBXj3U2eqgob77kRX_AtBdEvuEaQ9avAhexw")added the ability to scroll through slides
+        PDFViewer(documentURL: "https://s956sas.storage.yandex.net/rdisk/b900b5c02760cb5c04f26fd5b492b753ec5cd677604b711e2ef48a697516f25d/6676e7e0/LJd5h2Yt4sQeIIdfa80A2RDUqte3sOqEfQt1maKeZP8hbk-NWSu2IOwqCzW26ayx80NBfPrQTboqPnDv683_mA==?uid=545285032&filename=test2.pdf&disposition=attachment&hash=&limit=0&content_type=application%2Fpdf&owner_uid=545285032&fsize=10767270&hid=1d8673e0f2400f453174241a9c187988&media_type=document&tknv=v2&etag=c7a86ec848f3f30cd076aa436bcab053&ts=61b7bdba1b800&s=6b267cc7c32042136e98512536c012b63dc5b0c326647050c78ea304430a2e56&pb=U2FsdGVkX1_bgdVSDF493ET92m6kXO05o2AVuk3QLqgqUoGTARJYo5TIzEmCEWbEpLsieykqBXj3U2eqgob77kRX_AtBdEvuEaQ9avAhexw")
     }
 }
