@@ -7,59 +7,50 @@
 
 import SwiftUI
 import PDFKit
-import Combine
-
 // Используем UIViewRepresentable так как внутренняя библиотека PDFKit используется с UIKit
 struct PDFKitView: UIViewRepresentable {
-    @Binding var document: PDFDocument?
+    // PDF документ, который будет отображаться
+    var document: PDFDocument
+    // Связь с текущим индексом страницы для управления просмотром
     @Binding var currentPageIndex: Int
 
+    // Создание и настройка PDFView
     func makeUIView(context: Context) -> PDFView {
         let pdfView = PDFView()
         pdfView.displayMode = .singlePage
         pdfView.displayDirection = .vertical
-        // Первоначально устанавливаем autoScales в true, для расчета правильного масштабирования
         pdfView.autoScales = true
-
-        // Установка документа
-        if let document = document {
-            pdfView.document = document
-        }
+        pdfView.document = document
 
         return pdfView
     }
 
+    // Обновление отображаемого PDFView при изменении данных
     func updateUIView(_ uiView: PDFView, context: Context) {
-        // обновляем документ и центрируем на экране
-        if let document = document {
-            uiView.document = document
-            //переход по страницам с текущим индексом
-            if let page = document.page(at: currentPageIndex) {
-                uiView.go(to: page)
-            }
+        uiView.document = document
+        if let page = document.page(at: currentPageIndex) {
+            uiView.go(to: page)
         }
     }
 }
 
 struct PDFViewer: View {
-    // pdf документ для отображения, присваивается через Combine
-    @State private var document: PDFDocument?
-    @State private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
-    var documentURL: String
-
     @State private var currentPageIndex: Int = 0
+    // Данные PDF документа для отображения
+    var documentData: Data
 
     var body: some View {
         VStack {
-            if let document = document {
+            if let document = PDFDocument(data: documentData) {
                 VStack {
-                    PDFKitView(document: $document, currentPageIndex: $currentPageIndex)
+                    // Отображение PDFKitView с переданным документом и текущим индексом страницы
+                    PDFKitView(document: document, currentPageIndex: $currentPageIndex)
                         .edgesIgnoringSafeArea(.all)
 
+                    // Кнопки для перехода к предыдущей и следующей страницам
                     HStack {
                         Spacer()
                         Button(action: {
-                            //переход к предыдущему слайду
                             if currentPageIndex > 0 {
                                 currentPageIndex -= 1
                             }
@@ -67,9 +58,10 @@ struct PDFViewer: View {
                             Image(systemName: "arrow.left")
                         }
                         .padding()
+
                         Spacer()
+
                         Button(action: {
-                            //переход к следующему слайду
                             if currentPageIndex < (document.pageCount - 1) {
                                 currentPageIndex += 1
                             }
@@ -81,29 +73,59 @@ struct PDFViewer: View {
                     }
                 }
             } else {
-                Text("Loading...")
-                    .onAppear {
-                        loadPDF()
-                    }
+                Text("Ошибка")
             }
         }
-    }
-
-    private func loadPDF() {
-        // загружаем pdf
-        guard let url = URL(string: documentURL) else { return }
-        // используем Combine для подгрузки и отслеживания изменений
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map { PDFDocument(data: $0.data) }
-            .replaceError(with: nil)  // если ошибка при загрузке - возвращаем nil для отказоустойчивости приложения
-            .receive(on: DispatchQueue.main) // получаем в главном потоке, так как надо отрисовывать UI
-            .assign(to: \.document, on: self) // сохраняем результат в переменную document
-            .store(in: &cancellable)
     }
 }
 
 struct PDFViewer_Previews: PreviewProvider {
     static var previews: some View {
-        PDFViewer(documentURL: "https://s956sas.storage.yandex.net/rdisk/b900b5c02760cb5c04f26fd5b492b753ec5cd677604b711e2ef48a697516f25d/6676e7e0/LJd5h2Yt4sQeIIdfa80A2RDUqte3sOqEfQt1maKeZP8hbk-NWSu2IOwqCzW26ayx80NBfPrQTboqPnDv683_mA==?uid=545285032&filename=test2.pdf&disposition=attachment&hash=&limit=0&content_type=application%2Fpdf&owner_uid=545285032&fsize=10767270&hid=1d8673e0f2400f453174241a9c187988&media_type=document&tknv=v2&etag=c7a86ec848f3f30cd076aa436bcab053&ts=61b7bdba1b800&s=6b267cc7c32042136e98512536c012b63dc5b0c326647050c78ea304430a2e56&pb=U2FsdGVkX1_bgdVSDF493ET92m6kXO05o2AVuk3QLqgqUoGTARJYo5TIzEmCEWbEpLsieykqBXj3U2eqgob77kRX_AtBdEvuEaQ9avAhexw")
+        PDFViewer(documentData: generatePDF())
+    }
+
+    static func generatePDF() -> Data {
+        // Создание метаданных для PDF
+        let pdfMetaData = [
+            kCGPDFContextCreator: "Your App",
+            kCGPDFContextAuthor: "Your Name"
+        ]
+
+        // Создание формата рендеринга PDF с указанными метаданными
+        let format = UIGraphicsPDFRendererFormat()
+        format.documentInfo = pdfMetaData as [String: Any]
+
+        // Определение ширины и высоты страницы
+        let pageWidth = 8.5 * 72.0
+        let pageHeight = 11 * 72.0
+        let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
+
+        // Создание рендерера PDF с указанным размером страницы и форматом
+        let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
+
+        // Генерация данных PDF
+        let data = renderer.pdfData { context in
+            // Начало рендеринга первой страницы
+            context.beginPage()
+
+            // Добавление текста на первую страницу
+            let text1 = "Это текст на первой странице PDF файла"
+            let attributes1 = [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24)
+            ]
+            text1.draw(at: CGPoint(x: 50, y: 50), withAttributes: attributes1)
+
+            // Начало рендеринга второй страницы
+            context.beginPage()
+
+            // Добавление текста на вторую страницу
+            let text2 = "Это текст на второй странице PDF файла"
+            let attributes2 = [
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24)
+            ]
+            text2.draw(at: CGPoint(x: 50, y: 50), withAttributes: attributes2)
+        }
+
+        return data
     }
 }
