@@ -26,8 +26,6 @@ class API_root_class:Serializable{
         var mir:Mirror? = Mirror(reflecting: self)
 
         var name:String = ""
-        //var value:String=""
-        //var valType:String=""
 
         var keys:[String] = []
         var mydict:Dictionary<String,String> = [:]
@@ -57,9 +55,6 @@ class API_root_class:Serializable{
         }
 
         keys=keys.sorted()
-
-        //print("keys",keys)
-        //print(mydict)
 
         for key in keys{
             signature_text+=mydict[key] ?? ""

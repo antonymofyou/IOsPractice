@@ -12,8 +12,8 @@ struct ConfigData{
     let APP_USER_AGENT = "nasotku-free-ios-app"
     let razrabUrl = "https://app.nasotku.ru"
 
-    let VK_ID = "51873425"
-    let VK_SECRET_KEY = "U66dtZfGWyvWknZqcX1Y"
+    let VK_ID = "51816166"
+    let VK_SECRET_KEY = "9cOk7KKQOBmYKaKqvgQz"
     //Токен при первичной авторизации на сервере
     let FIRST_TOKEN = ""
 
