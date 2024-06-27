@@ -1,6 +1,15 @@
 {
-  "originHash" : "d207411df73944e1edffa9dc47354ba725953ade7f59956525da111de3451c6d",
+  "originHash" : "6e7997ae97b018059c24cd923b89f37a4ef4c7e7d20f1334deefb9d93265b06c",
   "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
+        "version" : "5.9.1"
+      }
+    },
     {
       "identity" : "serializedswift",
       "kind" : "remoteSourceControl",
@@ -8,6 +17,15 @@
       "state" : {
         "revision" : "9ed26f1561156c42374280ebdbf92bf5327bc8b5",
         "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "vkid-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/VKCOM/vkid-ios-sdk.git",
+      "state" : {
+        "revision" : "fd8d88c6dec817f2889c4d814a1131996cb854e7",
+        "version" : "2.0.0"
       }
     }
   ],

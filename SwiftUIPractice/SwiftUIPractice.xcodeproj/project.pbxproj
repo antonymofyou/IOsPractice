@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2A4CD3FF2C1C88370020CD42 /* TextTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3FE2C1C88370020CD42 /* TextTagView.swift */; };
+		2A87C8DB2C2D9A41005F4FC8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A87C8DA2C2D9A41005F4FC8 /* Alamofire */; };
+		2A87C8DE2C2D9A4E005F4FC8 /* VKID in Frameworks */ = {isa = PBXBuildFile; productRef = 2A87C8DD2C2D9A4E005F4FC8 /* VKID */; };
+		2A87C8E02C2D9A4E005F4FC8 /* VKIDCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2A87C8DF2C2D9A4E005F4FC8 /* VKIDCore */; };
+		2A87C8E82C2D9AB2005F4FC8 /* VKLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8E72C2D9AB2005F4FC8 /* VKLoginResponse.swift */; };
+		2A87C8EA2C2D9AC5005F4FC8 /* VKLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8E92C2D9AC5005F4FC8 /* VKLoginRequest.swift */; };
+		2A87C8EC2C2D9AE0005F4FC8 /* VKIDAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8EB2C2D9AE0005F4FC8 /* VKIDAuthButton.swift */; };
+		2A87C8EE2C2D9AF7005F4FC8 /* VKLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8ED2C2D9AF7005F4FC8 /* VKLoginViewModel.swift */; };
+		2A87C8F02C2D9B41005F4FC8 /* VKLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8EF2C2D9B41005F4FC8 /* VKLoginModel.swift */; };
 		C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */; };
 		C379F77C2C12452C0016E690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F77B2C12452C0016E690 /* ContentView.swift */; };
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
@@ -22,6 +30,11 @@
 
 /* Begin PBXFileReference section */
 		2A4CD3FE2C1C88370020CD42 /* TextTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTagView.swift; sourceTree = "<group>"; };
+		2A87C8E72C2D9AB2005F4FC8 /* VKLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginResponse.swift; sourceTree = "<group>"; };
+		2A87C8E92C2D9AC5005F4FC8 /* VKLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginRequest.swift; sourceTree = "<group>"; };
+		2A87C8EB2C2D9AE0005F4FC8 /* VKIDAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKIDAuthButton.swift; sourceTree = "<group>"; };
+		2A87C8ED2C2D9AF7005F4FC8 /* VKLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginViewModel.swift; sourceTree = "<group>"; };
+		2A87C8EF2C2D9B41005F4FC8 /* VKLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginModel.swift; sourceTree = "<group>"; };
 		C379F7762C12452C0016E690 /* SwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		C379F77B2C12452C0016E690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,12 +53,66 @@
 			buildActionMask = 2147483647;
 			files = (
 				C379F8052C19FA530016E690 /* SerializedSwift in Frameworks */,
+				2A87C8DE2C2D9A4E005F4FC8 /* VKID in Frameworks */,
+				2A87C8DB2C2D9A41005F4FC8 /* Alamofire in Frameworks */,
+				2A87C8E02C2D9A4E005F4FC8 /* VKIDCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A87C8E12C2D9A6E005F4FC8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2A87C8E22C2D9A79005F4FC8 /* VKLoginScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2A87C8E22C2D9A79005F4FC8 /* VKLoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2A87C8E62C2D9A96005F4FC8 /* Views */,
+				2A87C8E52C2D9A90005F4FC8 /* ViewModels */,
+				2A87C8E42C2D9A8C005F4FC8 /* Models */,
+				2A87C8E32C2D9A87005F4FC8 /* API */,
+			);
+			path = VKLoginScreen;
+			sourceTree = "<group>";
+		};
+		2A87C8E32C2D9A87005F4FC8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2A87C8E72C2D9AB2005F4FC8 /* VKLoginResponse.swift */,
+				2A87C8E92C2D9AC5005F4FC8 /* VKLoginRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2A87C8E42C2D9A8C005F4FC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A87C8EF2C2D9B41005F4FC8 /* VKLoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A87C8E52C2D9A90005F4FC8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A87C8ED2C2D9AF7005F4FC8 /* VKLoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A87C8E62C2D9A96005F4FC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C379F76D2C12452C0016E690 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +132,7 @@
 		C379F7782C12452C0016E690 /* SwiftUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				2A87C8E12C2D9A6E005F4FC8 /* Modules */,
 				C379F7FA2C19F8C80016E690 /* API */,
 				C379F7872C1248010016E690 /* Components */,
 				C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */,
@@ -87,6 +155,7 @@
 		C379F7872C1248010016E690 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2A87C8EB2C2D9AE0005F4FC8 /* VKIDAuthButton.swift */,
 				C379F7892C1248B00016E690 /* ImageWrapperView.swift */,
 				2A4CD3FE2C1C88370020CD42 /* TextTagView.swift */,
 			);
@@ -121,6 +190,9 @@
 			name = SwiftUIPractice;
 			packageProductDependencies = (
 				C379F8042C19FA530016E690 /* SerializedSwift */,
+				2A87C8DA2C2D9A41005F4FC8 /* Alamofire */,
+				2A87C8DD2C2D9A4E005F4FC8 /* VKID */,
+				2A87C8DF2C2D9A4E005F4FC8 /* VKIDCore */,
 			);
 			productName = SwiftUIPractice;
 			productReference = C379F7762C12452C0016E690 /* SwiftUIPractice.app */;
@@ -152,6 +224,8 @@
 			mainGroup = C379F76D2C12452C0016E690;
 			packageReferences = (
 				C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */,
+				2A87C8D92C2D9A41005F4FC8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				2A87C8DC2C2D9A4E005F4FC8 /* XCRemoteSwiftPackageReference "vkid-ios-sdk" */,
 			);
 			productRefGroup = C379F7772C12452C0016E690 /* Products */;
 			projectDirPath = "";
@@ -181,10 +255,15 @@
 			files = (
 				2A4CD3FF2C1C88370020CD42 /* TextTagView.swift in Sources */,
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
+				2A87C8EA2C2D9AC5005F4FC8 /* VKLoginRequest.swift in Sources */,
+				2A87C8EE2C2D9AF7005F4FC8 /* VKLoginViewModel.swift in Sources */,
 				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
+				2A87C8EC2C2D9AE0005F4FC8 /* VKIDAuthButton.swift in Sources */,
+				2A87C8E82C2D9AB2005F4FC8 /* VKLoginResponse.swift in Sources */,
 				C379F8022C19F9380016E690 /* ConfigData.swift in Sources */,
 				C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */,
 				C379F7FE2C19F90B0016E690 /* MainResponseClass.swift in Sources */,
+				2A87C8F02C2D9B41005F4FC8 /* VKLoginModel.swift in Sources */,
 				C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */,
 				C379F8002C19F91D0016E690 /* MainRequestClass.swift in Sources */,
 			);
@@ -396,6 +475,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A87C8D92C2D9A41005F4FC8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		2A87C8DC2C2D9A4E005F4FC8 /* XCRemoteSwiftPackageReference "vkid-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/VKCOM/vkid-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dejanskledar/SerializedSwift";
@@ -407,6 +502,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A87C8DA2C2D9A41005F4FC8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A87C8D92C2D9A41005F4FC8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		2A87C8DD2C2D9A4E005F4FC8 /* VKID */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A87C8DC2C2D9A4E005F4FC8 /* XCRemoteSwiftPackageReference "vkid-ios-sdk" */;
+			productName = VKID;
+		};
+		2A87C8DF2C2D9A4E005F4FC8 /* VKIDCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A87C8DC2C2D9A4E005F4FC8 /* XCRemoteSwiftPackageReference "vkid-ios-sdk" */;
+			productName = VKIDCore;
+		};
 		C379F8042C19FA530016E690 /* SerializedSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C379F8032C19FA530016E690 /* XCRemoteSwiftPackageReference "SerializedSwift" */;
