@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A0481462C302E75004AA570 /* CandidatesVacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481452C302E75004AA570 /* CandidatesVacancyModel.swift */; };
+		2A0481482C302FBD004AA570 /* CandidatesVacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481472C302FBD004AA570 /* CandidatesVacancyViewModel.swift */; };
+		2A04814A2C3030FF004AA570 /* CandidateByVacancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481492C3030FF004AA570 /* CandidateByVacancyView.swift */; };
+		2A04814C2C303166004AA570 /* CandidateByVacancyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04814B2C303166004AA570 /* CandidateByVacancyResponse.swift */; };
+		2A04814E2C303175004AA570 /* CandidateByVacancyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04814D2C303175004AA570 /* CandidateByVacancyRequest.swift */; };
+		2A0481502C303229004AA570 /* CandidateCommentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04814F2C303229004AA570 /* CandidateCommentsResponse.swift */; };
+		2A0481522C303235004AA570 /* CandidateCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481512C303235004AA570 /* CandidateCommentsRequest.swift */; };
 		2A4CD3D52C1B52C80020CD42 /* VacancyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */; };
 		2A4CD3D72C1B52DD0020CD42 /* VacancyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */; };
 		2A4CD3DA2C1B53030020CD42 /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */; };
@@ -26,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A0481452C302E75004AA570 /* CandidatesVacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesVacancyModel.swift; sourceTree = "<group>"; };
+		2A0481472C302FBD004AA570 /* CandidatesVacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesVacancyViewModel.swift; sourceTree = "<group>"; };
+		2A0481492C3030FF004AA570 /* CandidateByVacancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateByVacancyView.swift; sourceTree = "<group>"; };
+		2A04814B2C303166004AA570 /* CandidateByVacancyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateByVacancyResponse.swift; sourceTree = "<group>"; };
+		2A04814D2C303175004AA570 /* CandidateByVacancyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateByVacancyRequest.swift; sourceTree = "<group>"; };
+		2A04814F2C303229004AA570 /* CandidateCommentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateCommentsResponse.swift; sourceTree = "<group>"; };
+		2A0481512C303235004AA570 /* CandidateCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateCommentsRequest.swift; sourceTree = "<group>"; };
 		2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyResponse.swift; sourceTree = "<group>"; };
 		2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyRequest.swift; sourceTree = "<group>"; };
 		2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
@@ -56,9 +70,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0481402C302DE9004AA570 /* CandidatesVacancyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2A0481442C302E1B004AA570 /* Models */,
+				2A0481432C302E15004AA570 /* ViewModels */,
+				2A0481422C302E0D004AA570 /* Views */,
+				2A0481412C302E09004AA570 /* API */,
+			);
+			path = CandidatesVacancyScreen;
+			sourceTree = "<group>";
+		};
+		2A0481412C302E09004AA570 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2A04814B2C303166004AA570 /* CandidateByVacancyResponse.swift */,
+				2A04814D2C303175004AA570 /* CandidateByVacancyRequest.swift */,
+				2A04814F2C303229004AA570 /* CandidateCommentsResponse.swift */,
+				2A0481512C303235004AA570 /* CandidateCommentsRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2A0481422C302E0D004AA570 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A0481492C3030FF004AA570 /* CandidateByVacancyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A0481432C302E15004AA570 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A0481472C302FBD004AA570 /* CandidatesVacancyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A0481442C302E1B004AA570 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A0481452C302E75004AA570 /* CandidatesVacancyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2A4CD3D12C1B52A20020CD42 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2A0481402C302DE9004AA570 /* CandidatesVacancyScreen */,
 				2A4CD3D22C1B52A70020CD42 /* VacanciesScreen */,
 			);
 			path = Modules;
@@ -243,18 +304,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A04814E2C303175004AA570 /* CandidateByVacancyRequest.swift in Sources */,
+				2A0481462C302E75004AA570 /* CandidatesVacancyModel.swift in Sources */,
 				2A4CD3D72C1B52DD0020CD42 /* VacancyRequest.swift in Sources */,
 				2A4CD3DA2C1B53030020CD42 /* VacancyModel.swift in Sources */,
+				2A0481502C303229004AA570 /* CandidateCommentsResponse.swift in Sources */,
+				2A0481522C303235004AA570 /* CandidateCommentsRequest.swift in Sources */,
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
 				2A4CD3DE2C1B534C0020CD42 /* VacancyViewCell.swift in Sources */,
 				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
+				2A04814A2C3030FF004AA570 /* CandidateByVacancyView.swift in Sources */,
 				C379F8022C19F9380016E690 /* ConfigData.swift in Sources */,
 				C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */,
 				2A4CD3E32C1B53AA0020CD42 /* VacancyViewModel.swift in Sources */,
 				2A4CD3D52C1B52C80020CD42 /* VacancyResponse.swift in Sources */,
 				2A4CD3E02C1B53650020CD42 /* VacancyView.swift in Sources */,
+				2A0481482C302FBD004AA570 /* CandidatesVacancyViewModel.swift in Sources */,
 				C379F7FE2C19F90B0016E690 /* MainResponseClass.swift in Sources */,
 				C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */,
+				2A04814C2C303166004AA570 /* CandidateByVacancyResponse.swift in Sources */,
 				C379F8002C19F91D0016E690 /* MainRequestClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
