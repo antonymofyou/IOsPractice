@@ -31,6 +31,7 @@ struct CandidateByVacancyCell: View {
                         .cornerRadius(5)
                 }
                 .background {
+                    //TODO: раскомментировать после merge следущей ветки
 //                    NavigationLink(destination: VacancyResponseView(vacancy: vacancy, otklikId: candidate["otklikId"] ?? "", candidateId: candidate["otklikId"] ?? "")) {
 //                        EmptyView()
 //                    }
