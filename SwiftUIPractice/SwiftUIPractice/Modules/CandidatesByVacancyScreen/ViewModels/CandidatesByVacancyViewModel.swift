@@ -20,11 +20,10 @@ class CandidatesByVacancyViewModel: ObservableObject {
             switch result {
             case .success(let answer):
                 self.candidates = answer.candidates
-                print(self.candidates)
                 self.candidatesVacancyState = .success
             case .failure(let error):
                 print("error: \(error)")
-
+                self.candidates = []
             }
         }
     }
