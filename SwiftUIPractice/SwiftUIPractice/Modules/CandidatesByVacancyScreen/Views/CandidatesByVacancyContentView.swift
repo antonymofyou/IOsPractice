@@ -63,7 +63,16 @@ struct CandidatesByVacancyContentView: View {
     }
 }
 
-//TODO: сделать Preview
-//#Preview {
-//    CandidatesByVacancyContentView(selectedVacancyName: "", currentVacancy: [:], vacancies: [])
-//}
+#Preview {
+   var viewModel: CandidatesByVacancyViewModel = CandidatesByVacancyViewModel()
+    var vacancies: [[String: String]] = [["id": "64", "createdAt": "2023-11-26 15:07:08", "description": "описание вакансии", "published": "1", "name": "Менеджер вакансии 22"], ["id": "65", "createdAt": "2023-11-26 15:07:08", "description": "описание вакансии", "published": "1", "name": "Менеджер вакансии 23"]]
+    var currentVacancy: [String: String] = [
+        "published": "1",
+        "name": "Менеджер вакансии 22",
+        "description": "Описание вакансии",
+        "createdAt": "2023-11-26 15:07:08",
+        "id": "64"
+    ]
+    viewModel.obtainData(id: "64")
+    return CandidatesByVacancyContentView(selectedVacancyName: "Менеджер вакансии 22(id: 64)", currentVacancy: currentVacancy, vacancies: vacancies).environmentObject(viewModel)
+}

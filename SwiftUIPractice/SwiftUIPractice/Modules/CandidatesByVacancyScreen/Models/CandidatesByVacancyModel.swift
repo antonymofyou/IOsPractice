@@ -13,12 +13,12 @@ class CandidatesByVacancyModel {
     func GetCandidatessByID(vacancyId: String, completion: @escaping(Result<CandidatesByVacancyResponse, Error>) -> Void) {
 
         let req = CandidatesByVacancyRequest()
-        req.device = ConfigData().device
+        req.device = ConfigData.device
         req.vacancyId = vacancyId
         req.status = ""
-        req.make_signature(nasotku_token: ConfigData().token)
+        req.make_signature(nasotku_token: ConfigData.token)
 
-        let url = ConfigData().BASE_URL + ConfigData().apiAddr + "/candidates/get_candidates_by_vacancy_id.php"
+        let url = ConfigData.BASE_URL + ConfigData.apiAddr + "/candidates/get_candidates_by_vacancy_id.php"
 
         AF.request(url, method: .post, parameters: req, encoder: .json).responseDecodable(of: CandidatesByVacancyResponse.self) { response in
 

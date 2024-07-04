@@ -8,29 +8,37 @@
 import SwiftUI
 
 struct CandidatesByVacancyView: View {
-    @StateObject var viewModel: CandidatesByVacancyViewModel
+    @StateObject var viewModel: CandidatesByVacancyViewModel = CandidatesByVacancyViewModel()
     var vacancies: [[String: String]]
     var currentVacancy: [String: String]
-    init(vacancy: [String: String], vacancies: [[String: String]]) {
-        self.vacancies = vacancies
-        self.currentVacancy = vacancy
-        self._viewModel = StateObject(wrappedValue: CandidatesByVacancyViewModel(id: vacancy["id"] ?? "-1"))
-    }
 
     var body: some View {
-        switch viewModel.candidatesVacancyState {
-        case .loading:
-            ProgressView()
-                .scaleEffect(1.5)
-                .padding()
+        VStack {
+            switch viewModel.candidatesVacancyState {
+            case .loading:
+                ProgressView()
+                    .scaleEffect(1.5)
+                    .padding()
 
-        case .success:
-            CandidatesByVacancyContentView(selectedVacancyName: "\(currentVacancy["name"] ?? "")(id: \(currentVacancy["id"] ?? ""))", currentVacancy: currentVacancy, vacancies: vacancies).environmentObject(viewModel)
+            case .success:
+                CandidatesByVacancyContentView(selectedVacancyName: "\(currentVacancy["name"] ?? "")(id: \(currentVacancy["id"] ?? ""))", currentVacancy: currentVacancy, vacancies: vacancies).environmentObject(viewModel)
+            }
+        }
+        .onAppear {
+            viewModel.candidatesVacancyState = .loading
+            viewModel.obtainData(id: currentVacancy["id"] ?? "")
         }
     }
 }
 
-//TODO: сделать Preview
-//#Preview {
-//    CandidatesByVacancyView(currentVacancy: [:], vacancies: [])
-//}
+#Preview {
+    var vacancies: [[String: String]] = []
+    var currentVacancy: [String: String] = [
+        "published": "1",
+        "name": "Менеджер вакансии 22",
+        "description": "Описание вакансии",
+        "createdAt": "2023-11-26 15:07:08",
+        "id": "64"
+    ]
+    return CandidatesByVacancyView(vacancies: vacancies, currentVacancy: currentVacancy)
+}

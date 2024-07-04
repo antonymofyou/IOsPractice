@@ -14,6 +14,8 @@
 		2A0481832C3443E4004AA570 /* CandidatesByVacancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481822C3443E4004AA570 /* CandidatesByVacancyView.swift */; };
 		2A0481852C3447EF004AA570 /* CandidatesByVacancyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481842C3447EF004AA570 /* CandidatesByVacancyContentView.swift */; };
 		2A0481872C344839004AA570 /* CandidateByVacancyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481862C344839004AA570 /* CandidateByVacancyCell.swift */; };
+		2A0481C12C36D692004AA570 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481C02C36D692004AA570 /* TopView.swift */; };
+		2A0481C32C36D69E004AA570 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481C22C36D69E004AA570 /* ListView.swift */; };
 		2A4CD3D52C1B52C80020CD42 /* VacancyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */; };
 		2A4CD3D72C1B52DD0020CD42 /* VacancyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */; };
 		2A4CD3DA2C1B53030020CD42 /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */; };
@@ -40,6 +42,8 @@
 		2A0481822C3443E4004AA570 /* CandidatesByVacancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyView.swift; sourceTree = "<group>"; };
 		2A0481842C3447EF004AA570 /* CandidatesByVacancyContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyContentView.swift; sourceTree = "<group>"; };
 		2A0481862C344839004AA570 /* CandidateByVacancyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateByVacancyCell.swift; sourceTree = "<group>"; };
+		2A0481C02C36D692004AA570 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		2A0481C22C36D69E004AA570 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyResponse.swift; sourceTree = "<group>"; };
 		2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyRequest.swift; sourceTree = "<group>"; };
 		2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 			children = (
 				2A4CD3DD2C1B534C0020CD42 /* VacancyViewCell.swift */,
 				2A4CD3DF2C1B53650020CD42 /* VacancyView.swift */,
+				2A0481C02C36D692004AA570 /* TopView.swift */,
+				2A0481C22C36D69E004AA570 /* ListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +317,8 @@
 				2A0481852C3447EF004AA570 /* CandidatesByVacancyContentView.swift in Sources */,
 				2A4CD3DE2C1B534C0020CD42 /* VacancyViewCell.swift in Sources */,
 				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
+				2A0481C12C36D692004AA570 /* TopView.swift in Sources */,
+				2A0481C32C36D69E004AA570 /* ListView.swift in Sources */,
 				2A04817D2C3442A3004AA570 /* CandidatesByVacancyModel.swift in Sources */,
 				2A0481872C344839004AA570 /* CandidateByVacancyCell.swift in Sources */,
 				C379F8022C19F9380016E690 /* ConfigData.swift in Sources */,

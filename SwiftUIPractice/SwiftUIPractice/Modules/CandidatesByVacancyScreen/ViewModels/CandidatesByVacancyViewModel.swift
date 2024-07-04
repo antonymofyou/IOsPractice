@@ -11,9 +11,6 @@ class CandidatesByVacancyViewModel: ObservableObject {
     @Published var candidates: [[String: String]] = []
     @Published var candidatesVacancyState: CandidatesVacancyDownloadingState = .loading
 
-    init(id: String) {
-        obtainData(id: id)
-    }
     func obtainData(id: String) {
         let model = CandidatesByVacancyModel()
         model.GetCandidatessByID(vacancyId: id) { result in

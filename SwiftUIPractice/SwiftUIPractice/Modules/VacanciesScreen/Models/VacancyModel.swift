@@ -13,10 +13,10 @@ class VacancyModel {
     // Получение всех вакансий с API
     func GetAllVacancies(completion: @escaping(Result<VacancyResponse, Error>) -> Void) {
         let req = VacancyRequest()
-        req.device = ConfigData().device
-        req.make_signature(token: ConfigData().token)
+        req.device = ConfigData.device
+        req.make_signature(nasotku_token: ConfigData.token)
 
-        let url = ConfigData().BASE_URL + ConfigData().apiAddr + "/vacancies/get_all_vacancies.php"
+        let url = ConfigData.BASE_URL + ConfigData.apiAddr + "/vacancies/get_all_vacancies.php"
 
         AF.request(url, method: .post, parameters: req, encoder: .json).responseDecodable(of: VacancyResponse.self) { response in
 
@@ -29,6 +29,7 @@ class VacancyModel {
                 } else if vacancyResponse.vacancies.isEmpty {
                     completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Нет подходящих вакансий"])))
                 } else {
+                    print(vacancyResponse.vacancies)
                     completion(.success(vacancyResponse))
                 }
             case .failure(let error):

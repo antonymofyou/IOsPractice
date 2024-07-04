@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VacancyCellView: View {
-
+    var vacancies: [[String: String]]
     var vacancy: [String: String]
 
     var body: some View {
@@ -37,16 +37,16 @@ struct VacancyCellView: View {
                 .padding([.leading, .bottom], 10)
 
             HStack {
-                Button(action: {
-                    print("открывается экран откликов")
-                }) {
+                NavigationLink(destination: {
+                    CandidatesByVacancyView(vacancies: vacancies, currentVacancy: vacancy)
+                }, label: {
                     Text("Отклики")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.blue)
-                }
-                .cornerRadius(10)
+                        .cornerRadius(10)
+                })
                 Spacer()
                 Button(action: {
                     print("открывается экран редактирования")
@@ -69,6 +69,5 @@ struct VacancyCellView: View {
 }
 
 #Preview {
-    VacancyCellView(vacancy: ["id": "1", "name": "Front", "description": "Описание вакансии", "published": "1", "createdAt": "2023-06-01"])
+    VacancyCellView(vacancies: [], vacancy: ["id": "1", "name": "Front", "description": "Описание вакансии", "published": "1", "createdAt": "2023-06-01"])
 }
-
