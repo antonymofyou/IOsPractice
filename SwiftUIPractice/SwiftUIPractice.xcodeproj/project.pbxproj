@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A04817B2C34426C004AA570 /* CandidatesByVacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04817A2C34426C004AA570 /* CandidatesByVacancyViewModel.swift */; };
+		2A04817D2C3442A3004AA570 /* CandidatesByVacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04817C2C3442A3004AA570 /* CandidatesByVacancyModel.swift */; };
+		2A04817F2C344300004AA570 /* CandidatesByVacancyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04817E2C344300004AA570 /* CandidatesByVacancyResponse.swift */; };
+		2A0481812C34430E004AA570 /* CandidatesByVacancyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481802C34430E004AA570 /* CandidatesByVacancyRequest.swift */; };
+		2A0481832C3443E4004AA570 /* CandidatesByVacancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481822C3443E4004AA570 /* CandidatesByVacancyView.swift */; };
+		2A0481852C3447EF004AA570 /* CandidatesByVacancyContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481842C3447EF004AA570 /* CandidatesByVacancyContentView.swift */; };
+		2A0481872C344839004AA570 /* CandidateByVacancyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481862C344839004AA570 /* CandidateByVacancyCell.swift */; };
+		2A0481C12C36D692004AA570 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481C02C36D692004AA570 /* TopView.swift */; };
+		2A0481C32C36D69E004AA570 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0481C22C36D69E004AA570 /* ListView.swift */; };
 		2A4CD3D52C1B52C80020CD42 /* VacancyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */; };
 		2A4CD3D72C1B52DD0020CD42 /* VacancyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */; };
 		2A4CD3DA2C1B53030020CD42 /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */; };
@@ -26,6 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A04817A2C34426C004AA570 /* CandidatesByVacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyViewModel.swift; sourceTree = "<group>"; };
+		2A04817C2C3442A3004AA570 /* CandidatesByVacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyModel.swift; sourceTree = "<group>"; };
+		2A04817E2C344300004AA570 /* CandidatesByVacancyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyResponse.swift; sourceTree = "<group>"; };
+		2A0481802C34430E004AA570 /* CandidatesByVacancyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyRequest.swift; sourceTree = "<group>"; };
+		2A0481822C3443E4004AA570 /* CandidatesByVacancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyView.swift; sourceTree = "<group>"; };
+		2A0481842C3447EF004AA570 /* CandidatesByVacancyContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidatesByVacancyContentView.swift; sourceTree = "<group>"; };
+		2A0481862C344839004AA570 /* CandidateByVacancyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateByVacancyCell.swift; sourceTree = "<group>"; };
+		2A0481C02C36D692004AA570 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		2A0481C22C36D69E004AA570 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		2A4CD3D42C1B52C80020CD42 /* VacancyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyResponse.swift; sourceTree = "<group>"; };
 		2A4CD3D62C1B52DD0020CD42 /* VacancyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyRequest.swift; sourceTree = "<group>"; };
 		2A4CD3D92C1B53030020CD42 /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
@@ -56,9 +74,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A0481742C344220004AA570 /* CandidatesByVacancyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2A0481782C344240004AA570 /* Views */,
+				2A0481772C34423B004AA570 /* API */,
+				2A0481762C344236004AA570 /* Models */,
+				2A0481752C34422E004AA570 /* ViewModels */,
+			);
+			path = CandidatesByVacancyScreen;
+			sourceTree = "<group>";
+		};
+		2A0481752C34422E004AA570 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A04817A2C34426C004AA570 /* CandidatesByVacancyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2A0481762C344236004AA570 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A04817C2C3442A3004AA570 /* CandidatesByVacancyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A0481772C34423B004AA570 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2A04817E2C344300004AA570 /* CandidatesByVacancyResponse.swift */,
+				2A0481802C34430E004AA570 /* CandidatesByVacancyRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2A0481782C344240004AA570 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A0481822C3443E4004AA570 /* CandidatesByVacancyView.swift */,
+				2A0481842C3447EF004AA570 /* CandidatesByVacancyContentView.swift */,
+				2A0481862C344839004AA570 /* CandidateByVacancyCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2A4CD3D12C1B52A20020CD42 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2A0481742C344220004AA570 /* CandidatesByVacancyScreen */,
 				2A4CD3D22C1B52A70020CD42 /* VacanciesScreen */,
 			);
 			path = Modules;
@@ -97,6 +162,8 @@
 			children = (
 				2A4CD3DD2C1B534C0020CD42 /* VacancyViewCell.swift */,
 				2A4CD3DF2C1B53650020CD42 /* VacancyView.swift */,
+				2A0481C02C36D692004AA570 /* TopView.swift */,
+				2A0481C22C36D69E004AA570 /* ListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,16 +311,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A4CD3D72C1B52DD0020CD42 /* VacancyRequest.swift in Sources */,
+				2A04817F2C344300004AA570 /* CandidatesByVacancyResponse.swift in Sources */,
 				2A4CD3DA2C1B53030020CD42 /* VacancyModel.swift in Sources */,
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
+				2A0481852C3447EF004AA570 /* CandidatesByVacancyContentView.swift in Sources */,
 				2A4CD3DE2C1B534C0020CD42 /* VacancyViewCell.swift in Sources */,
 				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
+				2A0481C12C36D692004AA570 /* TopView.swift in Sources */,
+				2A0481C32C36D69E004AA570 /* ListView.swift in Sources */,
+				2A04817D2C3442A3004AA570 /* CandidatesByVacancyModel.swift in Sources */,
+				2A0481872C344839004AA570 /* CandidateByVacancyCell.swift in Sources */,
 				C379F8022C19F9380016E690 /* ConfigData.swift in Sources */,
+				2A0481812C34430E004AA570 /* CandidatesByVacancyRequest.swift in Sources */,
 				C379F78A2C1248B00016E690 /* ImageWrapperView.swift in Sources */,
 				2A4CD3E32C1B53AA0020CD42 /* VacancyViewModel.swift in Sources */,
+				2A0481832C3443E4004AA570 /* CandidatesByVacancyView.swift in Sources */,
 				2A4CD3D52C1B52C80020CD42 /* VacancyResponse.swift in Sources */,
 				2A4CD3E02C1B53650020CD42 /* VacancyView.swift in Sources */,
 				C379F7FE2C19F90B0016E690 /* MainResponseClass.swift in Sources */,
+				2A04817B2C34426C004AA570 /* CandidatesByVacancyViewModel.swift in Sources */,
 				C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */,
 				C379F8002C19F91D0016E690 /* MainRequestClass.swift in Sources */,
 			);
