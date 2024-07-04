@@ -24,6 +24,7 @@ class CandidatesByVacancyViewModel: ObservableObject {
             case .failure(let error):
                 print("error: \(error)")
                 self.candidates = []
+                self.candidatesVacancyState = .success
             }
         }
     }

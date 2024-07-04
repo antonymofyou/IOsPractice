@@ -53,8 +53,8 @@ struct CandidatesByVacancyContentView: View {
 
             ScrollView {
                 VStack(spacing: 10) {
-                    ForEach(viewModel.candidates, id: \.self) { candidate in
-                        CandidateByVacancyCell(candidate: candidate, vacancy: currentVacancy)
+                    ForEach($viewModel.candidates, id: \.self) { candidate in
+                        CandidateByVacancyCell(candidate: candidate, vacancy: $currentVacancy)
                             .padding(.horizontal, 30)
                     }
                 }
@@ -63,6 +63,7 @@ struct CandidatesByVacancyContentView: View {
     }
 }
 
-#Preview {
-    CandidatesByVacancyContentView(selectedVacancyName: "", currentVacancy: [:], vacancies: [])
-}
+//TODO: сделать Preview
+//#Preview {
+//    CandidatesByVacancyContentView(selectedVacancyName: "", currentVacancy: [:], vacancies: [])
+//}

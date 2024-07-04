@@ -7,7 +7,6 @@
 
 import Alamofire
 import Foundation
-
 class CandidatesByVacancyModel {
 
     // Получение откликов кандидатов по вакансии

@@ -29,3 +29,8 @@ struct CandidatesByVacancyView: View {
         }
     }
 }
+
+//TODO: сделать Preview
+//#Preview {
+//    CandidatesByVacancyView(currentVacancy: [:], vacancies: [])
+//}
