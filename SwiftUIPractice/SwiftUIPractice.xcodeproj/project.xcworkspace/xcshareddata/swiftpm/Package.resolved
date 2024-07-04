@@ -1,0 +1,24 @@
+{
+  "originHash" : "f8277af0b9b37d24de4ffd72f83f18ca653c7ec57c247a653c9f0f8efca93ede",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
+        "version" : "5.9.1"
+      }
+    },
+    {
+      "identity" : "serializedswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dejanskledar/SerializedSwift",
+      "state" : {
+        "revision" : "9ed26f1561156c42374280ebdbf92bf5327bc8b5",
+        "version" : "0.2.0"
+      }
+    }
+  ],
+  "version" : 3
+}

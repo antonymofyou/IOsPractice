@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct CandidateByVacancyCell: View {
-    var candidate: [String: String]
-    var vacancy: [String: String]
+    @Binding var candidate: [String: String]
+    @Binding var vacancy: [String: String]
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -20,26 +22,15 @@ struct CandidateByVacancyCell: View {
 
             HStack {
                 Spacer()
-                Text("id: \(candidate["otklikId"] ?? "")")
-                Button(action: {
-                    print(candidate)
-                }) {
-                    Image(systemName: "play.fill")
-                        .foregroundColor(.white)
-                        .frame(width: 30, height: 30)
-                        .background(Color.blue)
-                        .cornerRadius(5)
-                }
-                .background {
-                    //TODO: раскомментировать после merge следущей ветки
-//                    NavigationLink(destination: VacancyResponseView(vacancy: vacancy, otklikId: candidate["otklikId"] ?? "", candidateId: candidate["otklikId"] ?? "")) {
-//                        EmptyView()
-//                    }
-//                    .buttonStyle(PlainButtonStyle())
-//                    .opacity(0)
-                }
-                .buttonStyle(PlainButtonStyle())
-                Spacer()
+                Text("id: \(candidate["candidateId"] ?? "")")
+//                NavigationLink(destination: OtklikDetailView(vacancy: vacancy, otklikId: candidate["otklikId"] ?? "", candidateId: candidate["candidateId"] ?? "")) {
+//                    Image(systemName: "play.fill")
+//                        .foregroundColor(.white)
+//                        .frame(width: 30, height: 30)
+//                        .background(Color.blue)
+//                        .cornerRadius(5)
+//                }
+//                Spacer()
             }
         }
         .padding()
@@ -48,6 +39,7 @@ struct CandidateByVacancyCell: View {
     }
 }
 
-#Preview {
-    CandidateByVacancyCell(candidate: [:], vacancy: [:])
-}
+//TODO: сделать Preview
+//#Preview {
+//    CandidateByVacancyCell(candidate: [:], vacancy: [:])
+//}
