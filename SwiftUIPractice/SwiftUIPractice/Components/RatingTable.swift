@@ -10,13 +10,15 @@ import SwiftUI
 struct RatingTable: View {
     var symbols: [Symbol]
     var title: String
+    var onCellTapped: (Int) -> Void
+
     var body: some View {
         VStack {
             Text(title)
                 .font(.largeTitle)
                 .padding()
 
-            Grid(symbols: symbols, raws: determineColumns(count: symbols.count))
+            Grid(symbols: symbols, rows: determineColumns(count: symbols.count), onCellTapped: onCellTapped)
                 .border(Color.black, width: 1)
         }
     }
@@ -31,8 +33,10 @@ enum Symbol {
     case checkmark, cross, intermediate
 }
 
-struct TableCell: View {
+struct RatingTableCell: View {
     let symbol: Symbol?
+    let index: Int
+    let onCellTapped: (Int) -> Void
 
     var body: some View {
         ZStack {
@@ -40,8 +44,11 @@ struct TableCell: View {
                 .stroke(Color.black, lineWidth: 1)
             if let symbol = symbol {
                 SymbolView(symbol: symbol)
-                    .frame(minWidth: 25, maxWidth: 35, minHeight: 25, maxHeight: 35)
+                    .padding(10)
             }
+        }
+        .onTapGesture {
+            onCellTapped(index)
         }
     }
 }
@@ -69,22 +76,23 @@ struct SymbolView: View {
 
 struct Grid: View {
     let symbols: [Symbol]
-    let raws: Int
+    let rows: Int
+    let onCellTapped: (Int) -> Void
 
     var body: some View {
-        let columns = (symbols.count + raws - 1) / raws
+        let columns = (symbols.count + rows - 1) / rows
 
         VStack(spacing: 0) {
             ForEach(0..<columns, id: \.self) { column in
                 HStack(spacing: 0) {
-                    ForEach(0..<raws, id: \.self) { raw in
-                        let index = column * raws + raw
+                    ForEach(0..<rows, id: \.self) { row in
+                        let index = column * rows + row
                         if index < symbols.count {
-                            TableCell(symbol: symbols[index])
-                                .frame(minWidth: 50, maxWidth: 70, minHeight: 50, maxHeight: 70)
+                            RatingTableCell(symbol: symbols[index], index: index, onCellTapped: onCellTapped)
+                                .frame(width: 60, height: 60)
                         } else {
-                            TableCell(symbol: nil)
-                                .frame(minWidth: 50, maxWidth: 70, minHeight: 50, maxHeight: 70)
+                            Spacer()
+                                .frame(width: 60, height: 60)
                         }
                     }
                 }
@@ -104,5 +112,7 @@ struct Grid: View {
         .checkmark, .cross, .intermediate,
         .intermediate
     ]
-    return RatingTable(symbols: symbols, title: "Урок 1")
+    return RatingTable(symbols: symbols, title: "Урок 1", onCellTapped: { index in
+        print("Cell tapped: \(index)")
+    })
 }
