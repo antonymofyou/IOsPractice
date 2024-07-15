@@ -11,8 +11,6 @@ struct CanvasElementModel: Identifiable, Decodable {
     var type: String
     var x: CGFloat
     var y: CGFloat
-    var x_2: CGFloat?
-    var y_2: CGFloat?
     var width: CGFloat
     var height: CGFloat
     var borderColor: String?
@@ -22,6 +20,7 @@ struct CanvasElementModel: Identifiable, Decodable {
     var zIndex: CGFloat?
     var text: [TextModel]?
     var image: String?
+    var rotation: Double?
 }
 
 struct TextModel: Decodable {

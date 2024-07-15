@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ArrowView: View {
     @Binding var rotation: Angle
     var shape: CanvasElementModel
@@ -16,27 +14,32 @@ struct ArrowView: View {
 
     var body: some View {
         let arrowPath = Path { path in
+            let arrowSize: CGFloat = 20 * scale
+            let arrowWidth: CGFloat = shape.width * scale
+
+            let arrowHeadX = shape.x + arrowWidth * cos(rotation.radians)
+            let arrowHeadY = shape.y + arrowWidth * sin(rotation.radians)
 
             path.move(to: CGPoint(x: shape.x, y: shape.y))
-            path.addLine(to: CGPoint(x: shape.x_2 ?? shape.x + shape.width, y: shape.y_2 ?? shape.y))
+            path.addLine(to: CGPoint(x: arrowHeadX, y: arrowHeadY))
 
-            let arrowSize: CGFloat = 20
-            let angle = atan2((shape.y_2 ?? shape.y) - shape.y, (shape.x_2 ?? shape.x + shape.width) - shape.x)
-            path.addLine(to: CGPoint(
-                x: (shape.x_2 ?? shape.x + shape.width) - arrowSize * cos(angle - .pi / 3),
-                y: (shape.y_2 ?? shape.y) - arrowSize * sin(angle - .pi / 6)
-            ))
-            path.move(to: CGPoint(x: shape.x_2 ?? shape.x + shape.width, y: shape.y_2 ?? shape.y))
-            path.addLine(to: CGPoint(
-                x: (shape.x_2 ?? shape.x + shape.width) - arrowSize * cos(angle + .pi / 3),
-                y: (shape.y_2 ?? shape.y) - arrowSize * sin(angle + .pi / 6)
-            ))
+            let angle = rotation.radians - .pi / 6
+            let arrowEndX = arrowHeadX - arrowSize * cos(angle)
+            let arrowEndY = arrowHeadY - arrowSize * sin(angle)
+
+            path.move(to: CGPoint(x: arrowHeadX, y: arrowHeadY))
+            path.addLine(to: CGPoint(x: arrowEndX, y: arrowEndY))
+
+            let angle2 = rotation.radians + .pi / 6
+            let arrowEndX2 = arrowHeadX - arrowSize * cos(angle2)
+            let arrowEndY2 = arrowHeadY - arrowSize * sin(angle2)
+
+            path.move(to: CGPoint(x: arrowHeadX, y: arrowHeadY))
+            path.addLine(to: CGPoint(x: arrowEndX2, y: arrowEndY2))
         }
 
         return arrowPath
             .stroke(style: StrokeStyle(lineWidth: (shape.borderWidth ?? 10) * scale, lineCap: .round, lineJoin: .round))
             .foregroundColor(Color(hex: shape.borderColor ?? "#000000"))
-            .rotationEffect(rotation)
-//            .position(x: UIScreen.main.bounds.width / 2 + position.width, y: UIScreen.main.bounds.height / 2 + position.height)
     }
 }

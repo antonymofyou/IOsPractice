@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DraggableResizableView: View {
     var shape: CanvasElementModel
-    @State private var rotation: Angle = .zero
+    @State var rotation: Angle
     @State private var lastRotation: Angle = .zero
     @State private var position: CGSize = .zero
     @State private var lastPosition: CGSize = .zero
@@ -59,7 +59,3 @@ struct DraggableResizableView: View {
         )
     }
 }
-//
-//#Preview {
-//    DraggableResizableView()
-//}

@@ -22,7 +22,7 @@ struct CanvasView: View {
             Color.white
             ZStack {
                 ForEach(viewModel.getJSonData()) { shape in
-                    DraggableResizableView(shape: shape, isEditing: isEditing)
+                    DraggableResizableView(shape: shape, rotation: Angle(degrees: shape.rotation ?? 0.0), isEditing: isEditing)
                         .zIndex(shape.zIndex ?? 0.0)
                         .offset(dragOffset)
                         .allowsHitTesting(!isEditing)
@@ -58,7 +58,7 @@ struct CanvasView: View {
             Button(action: {
                 isEditing.toggle()
             }) {
-                Image(isEditing ? UIImage("editing") : UIImage("notEditing"))
+                Image(isEditing ? .editing : .notEditing)
                     .resizable()
                     .frame(width: 30, height: 30)
                     .padding()
@@ -71,7 +71,8 @@ struct CanvasView: View {
     }
 }
 
-
 #Preview {
-    CanvasView()
+    var shapes: [CanvasElementModel]
+    var viewModel: CanvasViewModel = CanvasViewModel()
+    return CanvasView()
 }

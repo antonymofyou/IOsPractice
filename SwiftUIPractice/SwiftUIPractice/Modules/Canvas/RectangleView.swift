@@ -5,8 +5,8 @@
 //  Created by Давид Васильев on 13.07.2024.
 //
 
-import SwiftUI
 
+import SwiftUI
 struct RectangleView: View {
     @Binding var rotation: Angle
     var shape: CanvasElementModel
@@ -48,7 +48,3 @@ struct RectangleView: View {
         }
     }
 }
-
-//#Preview {
-//    RectangleView()
-//}

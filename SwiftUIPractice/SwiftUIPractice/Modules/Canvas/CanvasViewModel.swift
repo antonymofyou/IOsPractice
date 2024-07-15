@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 class CanvasViewModel {
     let jsonData = """
     [
@@ -20,7 +21,8 @@ class CanvasViewModel {
             "borderColor": "#C70039",
             "zIndex": 0.5,
             "cornerRadius": 20,
-            "borderWidth": 5
+            "borderWidth": 5,
+            "rotation":90
         },
         {
             "id": 2,
@@ -30,19 +32,18 @@ class CanvasViewModel {
             "width": 150,
             "height": 150,
             "image": "cat",
-            "zIndex": 0.7
+            "zIndex": 0.7,
         },
         {
             "id": 3,
             "type": "arrow",
             "x": 200,
             "y": 200,
-            "x_2": 200,
-            "y_2": 400,
-            "width": 150,
+            "width": 250,
             "height": 150,
             "borderColor": "#C70039",
-            "zIndex": 0.2
+            "zIndex": 0.2,
+            "rotation":110
         },
         {
             "id": 4,
@@ -72,7 +73,6 @@ class CanvasViewModel {
     ]
     """.data(using: .utf8)!
 
-    // Decode JSON into ShapeModel array
     func getJSonData() -> [CanvasElementModel] {
         var shapesArray: [CanvasElementModel] = []
 
