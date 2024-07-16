@@ -14,37 +14,21 @@ struct RectangleView: View {
 
     var body: some View {
         ZStack {
-            if let cornerRadius = shape.cornerRadius, let color = shape.color {
-                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .fill(Color(hex: color))
-                    .rotationEffect(rotation)
-                    .frame(width: shape.width * scale, height: shape.height * scale)
-                    .position(x: shape.x, y: shape.y)
-            } else if let color = shape.color {
-                Rectangle()
-                    .fill(Color(hex: color))
-                    .rotationEffect(rotation)
-                    .frame(width: shape.width * scale, height: shape.height * scale)
-                    .position(x: shape.x, y: shape.y)
-            }
-            if let borderWidth = shape.borderWidth, let borderColor = shape.borderColor {
-                RoundedRectangle(cornerRadius: shape.cornerRadius ?? 0, style: .continuous)
-                    .stroke(Color(hex: borderColor), lineWidth: borderWidth * scale)
-                    .rotationEffect(rotation)
-                    .frame(width: shape.width * scale, height: shape.height * scale)
-                    .position(x: shape.x, y: shape.y)
-            }
-            if let text = shape.text?.first {
-                Text(text.text)
-                    .font(Font.system(size: text.fontSize ?? 12))
-                    .foregroundColor(Color(hex: text.fontColor ?? "black"))
-                    .multilineTextAlignment(.center)
-                    .padding(10)
-
-                    .rotationEffect(rotation)
-                    .frame(width: shape.width * scale, height: shape.height * scale)
-                    .position(x: shape.x, y: shape.y)
-            }
+           RoundedRectangle(cornerRadius: shape.cornerRadius ?? 0.0, style: .continuous)
+                .fill(Color(hex: shape.color ?? "#ffffff"))
+                .stroke(Color(hex: shape.borderColor ?? "#ffffff"), lineWidth: shape.borderWidth ?? 0.0 * scale)
+                .rotationEffect(rotation)
+                .frame(width: shape.width * scale, height: shape.height * scale)
+                .position(x: shape.x, y: shape.y)
+                .overlay(alignment: .top) {
+                    if let text = shape.text?.first {
+                        TextView(shape: shape, scale: scale, alignment: .leading)
+                            .rotationEffect(rotation)
+                            .frame(width: shape.width * scale, height: shape.height * scale, alignment: .bottom)
+                            .position(x: shape.x, y: shape.y)
+                    }
+                }
         }
     }
 }
+

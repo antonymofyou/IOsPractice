@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+import SwiftUI
+
 struct ImageView: View {
     @Binding var rotation: Angle
     var shape: CanvasElementModel
@@ -19,24 +22,12 @@ struct ImageView: View {
                     .resizable()
                     .rotationEffect(rotation)
                     .aspectRatio(contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: shape.cornerRadius ?? 0))
                     .frame(width: shape.width * scale, height: shape.height * scale)
                     .position(x: shape.x, y: shape.y)
-            }
-            if let borderWidth = shape.borderWidth, let borderColor = shape.borderColor {
-                RoundedRectangle(cornerRadius: shape.cornerRadius ?? 0, style: .continuous)
-                    .stroke(Color(hex: borderColor), lineWidth: borderWidth * scale)
-                    .frame(width: shape.width * scale, height: shape.height * scale)
-                    .position(x: shape.x, y: shape.y)
-
-                    .rotationEffect(rotation)
-
             }
             if let text = shape.text?.first {
-                Text(text.text)
-                    .font(Font.system(size: text.fontSize ?? 12))
-                    .foregroundColor(Color(hex: text.fontColor ?? "black"))
-                    .multilineTextAlignment(.center)
-                    .padding(10)
+                TextView(shape: shape, scale: scale, alignment: .center)
                     .rotationEffect(rotation)
                     .frame(width: shape.width * scale, height: shape.height * scale)
                     .position(x: shape.x, y: shape.y)
@@ -44,3 +35,5 @@ struct ImageView: View {
         }
     }
 }
+
+

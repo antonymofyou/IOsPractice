@@ -6,6 +6,14 @@
 //
 import SwiftUI
 
+struct PresentationModel: Decodable {
+    var imageDictionary: ImageDictionaryModel
+    var shapes: [CanvasElementModel]
+}
+
+struct ImageDictionaryModel: Decodable {
+    var imageDictionary: [String: String]
+}
 
 struct CanvasElementModel: Identifiable, Decodable {
     var id: Int
@@ -32,11 +40,4 @@ struct TextModel: Decodable {
 }
 
 
-struct ImageDictionaryModel: Decodable {
-    var imageDictionary: [String: String]
-}
 
-struct PresentationModel: Decodable {
-    var imageDictionary: ImageDictionaryModel
-    var shapes: [CanvasElementModel]
-}
