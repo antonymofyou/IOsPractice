@@ -15,14 +15,14 @@ struct DraggableResizableView: View {
     @State private var lastPosition: CGSize = .zero
     @State private var scale: CGFloat = 1.0
     var isEditing: Bool
-
+    var image: UIImage?
     var body: some View {
         ZStack {
             switch shape.type {
             case "rectangle":
                 RectangleView(rotation: $rotation, shape: shape, scale: scale)
             case "image":
-                ImageView(rotation: $rotation, shape: shape, scale: scale)
+                ImageView(rotation: $rotation, shape: shape, scale: scale, image: image)
             case "arrow":
                 ArrowView(rotation: $rotation, shape: shape, scale: scale)
             default:

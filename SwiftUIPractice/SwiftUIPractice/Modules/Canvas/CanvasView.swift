@@ -21,8 +21,8 @@ struct CanvasView: View {
         ZStack {
             Color.white
             ZStack {
-                ForEach(viewModel.getJSonData()) { shape in
-                    DraggableResizableView(shape: shape, rotation: Angle(degrees: shape.rotation ?? 0.0), isEditing: isEditing)
+                ForEach(viewModel.getCanvasData()) { shape in
+                    DraggableResizableView(shape: shape, rotation: Angle(degrees: shape.rotation ?? 0.0), isEditing: isEditing, image:  shape.imageId != nil ? viewModel.imagesDict[shape.imageId!] : nil)
                         .zIndex(shape.zIndex ?? 0.0)
                         .offset(dragOffset)
                         .allowsHitTesting(!isEditing)

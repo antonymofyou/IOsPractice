@@ -11,11 +11,11 @@ struct ImageView: View {
     @Binding var rotation: Angle
     var shape: CanvasElementModel
     var scale: CGFloat
-
+    var image: UIImage?
     var body: some View {
         ZStack {
-            if let imageName = shape.image {
-                Image(imageName)
+            if let image = image {
+                Image(uiImage: image)
                     .resizable()
                     .rotationEffect(rotation)
                     .aspectRatio(contentMode: .fit)

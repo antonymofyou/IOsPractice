@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+
 struct CanvasElementModel: Identifiable, Decodable {
     var id: Int
     var type: String
@@ -19,7 +20,7 @@ struct CanvasElementModel: Identifiable, Decodable {
     var cornerRadius: CGFloat?
     var zIndex: CGFloat?
     var text: [TextModel]?
-    var image: String?
+    var imageId: String?
     var rotation: Double?
 }
 
@@ -28,4 +29,14 @@ struct TextModel: Decodable {
     var type: String?
     var fontSize: CGFloat?
     var fontColor: String?
+}
+
+
+struct ImageDictionaryModel: Decodable {
+    var imageDictionary: [String: String]
+}
+
+struct PresentationModel: Decodable {
+    var imageDictionary: ImageDictionaryModel
+    var shapes: [CanvasElementModel]
 }
