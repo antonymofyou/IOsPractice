@@ -62,7 +62,7 @@ class CanvasViewModel: ObservableObject {
                 "alignment": "top",
                 "text": [
                     {
-                        "alignment": "leading",
+                        "alignment": "left",
                         "text": [
                             {
                                 "text": "Hello",
@@ -78,7 +78,7 @@ class CanvasViewModel: ObservableObject {
                         ]
                     },
                     {
-                        "alignment": "trailing",
+                        "alignment": "right",
                         "text": [
                             {
                                 "text": "Hello",

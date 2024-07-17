@@ -15,10 +15,10 @@ struct TextView: View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(shape.text ?? [], id: \.alignment) { partTextModel in
                 HStack {
-                    if partTextModel.alignment == "leading" {
+                    if partTextModel.alignment == "left" {
                         styledText(textArray: partTextModel.text ?? [])
                         Spacer()
-                    } else if partTextModel.alignment == "trailing" {
+                    } else if partTextModel.alignment == "right" {
                         Spacer()
                         styledText(textArray: partTextModel.text ?? [])
                     } else if partTextModel.alignment == "center" {

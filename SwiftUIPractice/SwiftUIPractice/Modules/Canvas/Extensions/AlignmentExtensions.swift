@@ -14,20 +14,8 @@ extension Alignment {
             return .top
         case "bottom":
             return .bottom
-        case "leading":
-            return .leading
-        case "trailing":
-            return .trailing
         case "center":
             return .center
-        case "topleading":
-            return .topLeading
-        case "toptrailing":
-            return .topTrailing
-        case "bottomleading":
-            return .bottomLeading
-        case "bottomtrailing":
-            return .bottomTrailing
         default:
             return .center
         }
