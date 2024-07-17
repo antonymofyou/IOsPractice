@@ -36,7 +36,6 @@ struct DraggableResizableView: View {
                 .onChanged { value in
                     position.width = lastPosition.width + value.translation.width
                     position.height = lastPosition.height + value.translation.height
-                    print(position)
                 }
                 .onEnded { value in
                     lastPosition = position

@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-import SwiftUI
-
 struct ImageView: View {
     @Binding var rotation: Angle
     var shape: CanvasElementModel
@@ -27,7 +24,7 @@ struct ImageView: View {
                     .position(x: shape.x, y: shape.y)
             }
             if let text = shape.text?.first {
-                TextView(shape: shape, scale: scale, alignment: .center)
+                TextView(shape: shape, scale: scale)
                     .rotationEffect(rotation)
                     .frame(width: shape.width * scale, height: shape.height * scale)
                     .position(x: shape.x, y: shape.y)
@@ -35,5 +32,3 @@ struct ImageView: View {
         }
     }
 }
-
-

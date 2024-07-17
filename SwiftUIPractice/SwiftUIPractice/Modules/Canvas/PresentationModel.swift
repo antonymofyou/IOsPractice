@@ -5,14 +5,9 @@
 //  Created by Давид Васильев on 13.07.2024.
 //
 import SwiftUI
-
 struct PresentationModel: Decodable {
     var imageDictionary: ImageDictionaryModel
     var shapes: [CanvasElementModel]
-}
-
-struct ImageDictionaryModel: Decodable {
-    var imageDictionary: [String: String]
 }
 
 struct CanvasElementModel: Identifiable, Decodable {
@@ -27,9 +22,15 @@ struct CanvasElementModel: Identifiable, Decodable {
     var borderWidth: CGFloat?
     var cornerRadius: CGFloat?
     var zIndex: CGFloat?
-    var text: [TextModel]?
+    var alignment: String?
+    var text: [PartTextModel]?
     var imageId: String?
     var rotation: Double?
+}
+
+struct PartTextModel: Decodable {
+    var alignment: String?
+    var text: [TextModel]?
 }
 
 struct TextModel: Decodable {
@@ -39,5 +40,7 @@ struct TextModel: Decodable {
     var fontColor: String?
 }
 
-
+struct ImageDictionaryModel: Decodable {
+    var imageDictionary: [String: String]
+}
 

@@ -10,20 +10,25 @@ import SwiftUI
 struct TextView: View {
     var shape: CanvasElementModel
     var scale: CGFloat
-    var alignment: TextAlignment
 
     var body: some View {
-        HStack {
-            if alignment == .leading {
-                styledText(textArray: shape.text ?? [])
-                Spacer()
-            } else if alignment == .trailing {
-                Spacer()
-                styledText(textArray: shape.text ?? [])
-            } else {
-                Spacer()
-                styledText(textArray: shape.text ?? [])
-                Spacer()
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(shape.text ?? [], id: \.alignment) { partTextModel in
+                HStack {
+                    if partTextModel.alignment == "leading" {
+                        styledText(textArray: partTextModel.text ?? [])
+                        Spacer()
+                    } else if partTextModel.alignment == "trailing" {
+                        Spacer()
+                        styledText(textArray: partTextModel.text ?? [])
+                    } else if partTextModel.alignment == "center" {
+                        Spacer()
+                        styledText(textArray: partTextModel.text ?? [])
+                        Spacer()
+                    } else {
+                        styledText(textArray: partTextModel.text ?? [])
+                    }
+                }
             }
         }
     }
@@ -53,4 +58,3 @@ struct TextView: View {
         return resultText
     }
 }
-

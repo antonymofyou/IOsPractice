@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CanvasView: View {
-
-    var viewModel: CanvasViewModel = CanvasViewModel()
+    @StateObject var viewModel: CanvasViewModel = CanvasViewModel()
     @State private var isEditing: Bool = false
     @State private var dragOffset: CGSize = .zero
     @State private var scale: CGFloat = 1.0
