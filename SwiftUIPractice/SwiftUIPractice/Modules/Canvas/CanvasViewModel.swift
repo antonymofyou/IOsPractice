@@ -102,32 +102,32 @@ class CanvasViewModel: ObservableObject {
     """.data(using: .utf8)!
 
     func getCanvasData() -> [CanvasElementModel] {
-           var shapesArray: [CanvasElementModel] = []
-           var uiImageDictionary: [String: UIImage] = [:]
+        var shapesArray: [CanvasElementModel] = []
+        var uiImageDictionary: [String: UIImage] = [:]
 
-           do {
-               if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
-                   if let imageDict = json["imageDictionary"] as? [String: String] {
-                       for (key, base64String) in imageDict {
-                           if let uiImage = convertBase64ToUIImage(base64String: base64String) {
-                               uiImageDictionary[key] = uiImage
-                           }
-                       }
-                   }
-                   if let shapesData = json["shapes"] {
-                       let shapesJsonData = try JSONSerialization.data(withJSONObject: shapesData)
-                       shapesArray = try JSONDecoder().decode([CanvasElementModel].self, from: shapesJsonData)
-                   }
-               }
-           } catch {
-               print("Error decoding JSON: \(error)")
-           }
+        do {
+            if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+                if let imageDict = json["imageDictionary"] as? [String: String] {
+                    for (key, base64String) in imageDict {
+                        if let uiImage = convertBase64ToUIImage(base64String: base64String) {
+                            uiImageDictionary[key] = uiImage
+                        }
+                    }
+                }
+                if let shapesData = json["shapes"] {
+                    let shapesJsonData = try JSONSerialization.data(withJSONObject: shapesData)
+                    shapesArray = try JSONDecoder().decode([CanvasElementModel].self, from: shapesJsonData)
+                }
+            }
+        } catch {
+            print("Error decoding JSON: \(error)")
+        }
         imagesDict = uiImageDictionary
-           return shapesArray
-       }
+        return shapesArray
+    }
 
-       private func convertBase64ToUIImage(base64String: String) -> UIImage? {
-           guard let imageData = Data(base64Encoded: base64String) else { return nil }
-           return UIImage(data: imageData)
-       }
+    private func convertBase64ToUIImage(base64String: String) -> UIImage? {
+        guard let imageData = Data(base64Encoded: base64String) else { return nil }
+        return UIImage(data: imageData)
+    }
 }

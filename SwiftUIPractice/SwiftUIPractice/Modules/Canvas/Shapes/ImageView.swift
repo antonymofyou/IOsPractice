@@ -12,6 +12,7 @@ struct ImageView: View {
     var shape: CanvasElementModel
     var scale: CGFloat
     var image: UIImage?
+    
     var body: some View {
         ZStack {
             if let image = image {

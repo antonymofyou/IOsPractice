@@ -21,16 +21,15 @@ struct CanvasView: View {
             Color.white
             ZStack {
                 ForEach(viewModel.getCanvasData()) { shape in
-                    DraggableResizableView(shape: shape, rotation: Angle(degrees: shape.rotation ?? 0.0), isEditing: isEditing, image:  shape.imageId != nil ? viewModel.imagesDict[shape.imageId!] : nil)
+                    DraggableResizableView(rotation: Angle(degrees: shape.rotation ?? 0.0), shape: shape, isEditing: isEditing, image:  shape.imageId != nil ? viewModel.imagesDict[shape.imageId!] : nil)
                         .zIndex(shape.zIndex ?? 0.0)
                         .offset(dragOffset)
                         .allowsHitTesting(!isEditing)
-
                 }
                 .scaleEffect(scale)
                 .offset(position)
             }
-            .frame(width: 414, height: 842)
+            .frame(width: UIApplication.shared.windows.first?.frame.width, height:  UIApplication.shared.windows.first?.frame.height)
         }
         .ignoresSafeArea()
         .gesture(

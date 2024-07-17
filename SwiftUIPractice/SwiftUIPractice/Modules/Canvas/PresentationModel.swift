@@ -5,6 +5,7 @@
 //  Created by Давид Васильев on 13.07.2024.
 //
 import SwiftUI
+
 struct PresentationModel: Decodable {
     var imageDictionary: ImageDictionaryModel
     var shapes: [CanvasElementModel]

@@ -35,7 +35,7 @@ struct TextView: View {
 
     func styledText(textArray: [TextModel]) -> Text {
         var resultText = Text("")
-
+        
         for textModel in textArray {
             let text = Text(textModel.text)
                 .foregroundColor(Color(hex: textModel.fontColor ?? "#000000"))

@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct DraggableResizableView: View {
-    var shape: CanvasElementModel
     @State var rotation: Angle
     @State private var lastRotation: Angle = .zero
     @State private var position: CGSize = .zero
     @State private var lastPosition: CGSize = .zero
     @State private var scale: CGFloat = 1.0
+    var shape: CanvasElementModel
     var isEditing: Bool
     var image: UIImage?
+
     var body: some View {
         ZStack {
             switch shape.type {
