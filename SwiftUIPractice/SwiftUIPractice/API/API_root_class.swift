@@ -19,8 +19,8 @@ class API_root_class:Serializable{
     func calc_signature(nasotku_token:String) -> String{
 
         //добавляем(конкатенируем) два ключа(int+string) и добавляем токен
-        let app_secret_key_int = ConfigData().APP_SECRET_KEY_INT
-        let app_secret_key_str = ConfigData().APP_SECRET_KEY_STRING
+        let app_secret_key_int = 0
+        let app_secret_key_str = ""
         var signature_text = ""
 
         var mir:Mirror? = Mirror(reflecting: self)
