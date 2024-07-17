@@ -22,12 +22,14 @@ struct ImageView: View {
                     .clipShape(RoundedRectangle(cornerRadius: shape.cornerRadius ?? 0))
                     .frame(width: shape.width * scale, height: shape.height * scale)
                     .position(x: shape.x, y: shape.y)
-            }
-            if let text = shape.text?.first {
-                TextView(shape: shape, scale: scale)
-                    .rotationEffect(rotation)
-                    .frame(width: shape.width * scale, height: shape.height * scale)
-                    .position(x: shape.x, y: shape.y)
+                    .overlay {
+                        if let text = shape.text?.first {
+                            TextView(shape: shape, scale: scale)
+                                .rotationEffect(rotation)
+                                .frame(width: shape.width * scale, height: shape.height * scale, alignment: Alignment.from(string: shape.alignment ?? "center"))
+                                .position(x: shape.x, y: shape.y)
+                        }
+                    }
             }
         }
     }
