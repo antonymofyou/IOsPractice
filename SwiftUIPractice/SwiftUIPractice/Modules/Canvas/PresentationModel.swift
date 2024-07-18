@@ -23,14 +23,14 @@ struct CanvasElementModel: Identifiable, Decodable {
     var borderWidth: CGFloat?
     var cornerRadius: CGFloat?
     var zIndex: CGFloat?
-    var alignment: String?
+    var textVerticalAlignment: String? // вертикальное выравнивание всего текстового блока который находится на элементе
     var text: [PartTextModel]?
     var imageId: String?
     var rotation: Double?
 }
 
 struct PartTextModel: Decodable {
-    var alignment: String?
+    var alignment: String?  // выравнивание left right center у конкретного текста из текстового блока
     var text: [TextModel]?
 }
 

@@ -27,7 +27,7 @@ struct RectangleView: View {
                     if let text = shape.text?.first {
                         TextView(shape: shape, scale: scale)
                             .rotationEffect(rotation)
-                            .frame(width: shape.width * scale, height: shape.height * scale, alignment: Alignment.from(string: shape.alignment ?? "center"))
+                            .frame(width: shape.width * scale, height: shape.height * scale, alignment: Alignment.from(string: shape.textVerticalAlignment ?? "center"))
                             .position(x: shape.x, y: shape.y)
                     }
                 }

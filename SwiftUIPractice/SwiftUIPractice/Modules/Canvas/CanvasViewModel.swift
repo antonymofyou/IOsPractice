@@ -59,7 +59,7 @@ class CanvasViewModel: ObservableObject {
                 "color": "#FF5733",
                 "borderColor": "#C70039",
                 "zIndex": 0.5,
-                "alignment": "top",
+                "textVerticalAlignment": "top",
                 "text": [
                     {
                         "alignment": "left",
