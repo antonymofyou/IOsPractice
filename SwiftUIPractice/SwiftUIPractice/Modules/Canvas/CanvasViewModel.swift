@@ -10,7 +10,7 @@ import SwiftUI
 class CanvasViewModel: ObservableObject {
     var imagesDict: [String: UIImage] = [:]
     var elementsArray: [CanvasElementModel] = []
-    func getCanvasData(jsonData: Data) {
+    func convertJsonToCanvasData(jsonData: Data) {
         var shapesArray: [CanvasElementModel] = []
         var uiImageDictionary: [String: UIImage] = [:]
 
