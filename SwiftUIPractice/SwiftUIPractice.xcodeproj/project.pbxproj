@@ -19,6 +19,7 @@
 		2A87C8EC2C2D9AE0005F4FC8 /* VKIDAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8EB2C2D9AE0005F4FC8 /* VKIDAuthButton.swift */; };
 		2A87C8EE2C2D9AF7005F4FC8 /* VKLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8ED2C2D9AF7005F4FC8 /* VKLoginViewModel.swift */; };
 		2A87C8F02C2D9B41005F4FC8 /* VKLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87C8EF2C2D9B41005F4FC8 /* VKLoginModel.swift */; };
+		2AB1DF332C3BF2990095B243 /* SildeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB1DF322C3BF2990095B243 /* SildeBar.swift */; };
 		2AC6C1A32C42AE1D0022F7E3 /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1A22C42AE1D0022F7E3 /* CanvasViewModel.swift */; };
 		2AC6C1A52C42AE3D0022F7E3 /* DraggableResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1A42C42AE3D0022F7E3 /* DraggableResizableView.swift */; };
 		2AC6C1A72C42AE520022F7E3 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1A62C42AE520022F7E3 /* RectangleView.swift */; };
@@ -27,7 +28,6 @@
 		2AC6C1AD2C42AEB30022F7E3 /* PresentationClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1AC2C42AEB30022F7E3 /* PresentationClasses.swift */; };
 		2AC6C1AF2C42AF1D0022F7E3 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1AE2C42AF1D0022F7E3 /* ColorExtensions.swift */; };
 		2AC6C1BB2C46EFD20022F7E3 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1BA2C46EFD20022F7E3 /* TextView.swift */; };
-		2AB1DF332C3BF2990095B243 /* SildeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB1DF322C3BF2990095B243 /* SildeBar.swift */; };
 		C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */; };
 		C379F77C2C12452C0016E690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F77B2C12452C0016E690 /* ContentView.swift */; };
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
@@ -50,6 +50,7 @@
 		2A87C8EB2C2D9AE0005F4FC8 /* VKIDAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKIDAuthButton.swift; sourceTree = "<group>"; };
 		2A87C8ED2C2D9AF7005F4FC8 /* VKLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginViewModel.swift; sourceTree = "<group>"; };
 		2A87C8EF2C2D9B41005F4FC8 /* VKLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginModel.swift; sourceTree = "<group>"; };
+		2AB1DF322C3BF2990095B243 /* SildeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SildeBar.swift; sourceTree = "<group>"; };
 		2AC6C1A22C42AE1D0022F7E3 /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
 		2AC6C1A42C42AE3D0022F7E3 /* DraggableResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableResizableView.swift; sourceTree = "<group>"; };
 		2AC6C1A62C42AE520022F7E3 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		2AC6C1AC2C42AEB30022F7E3 /* PresentationClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationClasses.swift; sourceTree = "<group>"; };
 		2AC6C1AE2C42AF1D0022F7E3 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		2AC6C1BA2C46EFD20022F7E3 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
-		2AB1DF322C3BF2990095B243 /* SildeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SildeBar.swift; sourceTree = "<group>"; };
 		C379F7762C12452C0016E690 /* SwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		C379F77B2C12452C0016E690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -495,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractice/Preview Content\"";
-				DEVELOPMENT_TEAM = W937SWAWNQ;
+				DEVELOPMENT_TEAM = 7R6YYPUZFH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -525,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIPractice/Preview Content\"";
-				DEVELOPMENT_TEAM = W937SWAWNQ;
+				DEVELOPMENT_TEAM = 7R6YYPUZFH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
