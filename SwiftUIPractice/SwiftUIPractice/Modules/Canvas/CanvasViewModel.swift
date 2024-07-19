@@ -10,7 +10,7 @@ import SwiftUI
 class CanvasViewModel: ObservableObject {
     var imagesDict: [String: UIImage] = [:]
     var elementsArray: [CanvasElementModel] = []
-    func convertJsonToCanvasData(jsonData: Data) {
+    func convertJsonToCanvasData(jsonData: Data) -> (imagesDict: [String: UIImage], elementsArray: [CanvasElementModel]){
         var shapesArray: [CanvasElementModel] = []
         var uiImageDictionary: [String: UIImage] = [:]
 
@@ -31,8 +31,7 @@ class CanvasViewModel: ObservableObject {
         } catch {
             print("Error decoding JSON: \(error)")
         }
-        imagesDict = uiImageDictionary
-        elementsArray = shapesArray
+        return (uiImageDictionary, shapesArray)
     }
 
     private func convertBase64ToUIImage(base64String: String) -> UIImage? {
