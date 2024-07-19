@@ -160,7 +160,8 @@ struct CanvasView: View {
             }
         ]
     }
-""".data(using: .utf8)!
+""".data(using: .utf8) ?? nil
+    //Preview
     var viewModel: CanvasViewModel = CanvasViewModel()
     viewModel.convertJsonToCanvasData(jsonData: jsonData ?? Data())
     return CanvasView(viewModel: viewModel)
