@@ -2,7 +2,7 @@
 //  CanvasView.swift
 //  SwiftUIPractice
 //
-//  Created by Давид Васильев on 13.07.2024.
+//  Created by Давид Васильев on 19.07.2024.
 //
 
 import SwiftUI

@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct PresentationModel: Decodable {
+struct PresentationClasses: Decodable {
     var imageDictionary: ImageDictionaryModel
     var shapes: [CanvasElementModel]
 }
