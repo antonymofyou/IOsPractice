@@ -27,6 +27,7 @@
 		2AC6C1AD2C42AEB30022F7E3 /* PresentationClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1AC2C42AEB30022F7E3 /* PresentationClasses.swift */; };
 		2AC6C1AF2C42AF1D0022F7E3 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1AE2C42AF1D0022F7E3 /* ColorExtensions.swift */; };
 		2AC6C1BB2C46EFD20022F7E3 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC6C1BA2C46EFD20022F7E3 /* TextView.swift */; };
+		2AB1DF332C3BF2990095B243 /* SildeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB1DF322C3BF2990095B243 /* SildeBar.swift */; };
 		C379F77A2C12452C0016E690 /* SwiftUIPracticeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */; };
 		C379F77C2C12452C0016E690 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379F77B2C12452C0016E690 /* ContentView.swift */; };
 		C379F77E2C12452E0016E690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C379F77D2C12452E0016E690 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		2AC6C1AC2C42AEB30022F7E3 /* PresentationClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationClasses.swift; sourceTree = "<group>"; };
 		2AC6C1AE2C42AF1D0022F7E3 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		2AC6C1BA2C46EFD20022F7E3 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		2AB1DF322C3BF2990095B243 /* SildeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SildeBar.swift; sourceTree = "<group>"; };
 		C379F7762C12452C0016E690 /* SwiftUIPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C379F7792C12452C0016E690 /* SwiftUIPracticeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeApp.swift; sourceTree = "<group>"; };
 		C379F77B2C12452C0016E690 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				C379F7892C1248B00016E690 /* ImageWrapperView.swift */,
 				2A4CD3FE2C1C88370020CD42 /* TextTagView.swift */,
 				2A04820E2C37F772004AA570 /* RatingTable.swift */,
+				2AB1DF322C3BF2990095B243 /* SildeBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				2A4CD3FF2C1C88370020CD42 /* TextTagView.swift in Sources */,
 				C379F77C2C12452C0016E690 /* ContentView.swift in Sources */,
 				2A87C8EA2C2D9AC5005F4FC8 /* VKLoginRequest.swift in Sources */,
+				2AB1DF332C3BF2990095B243 /* SildeBar.swift in Sources */,
 				2A87C8EE2C2D9AF7005F4FC8 /* VKLoginViewModel.swift in Sources */,
 				C379F7FC2C19F8D80016E690 /* API_root_class.swift in Sources */,
 				2A87C8EC2C2D9AE0005F4FC8 /* VKIDAuthButton.swift in Sources */,
